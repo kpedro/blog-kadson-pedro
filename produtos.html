@@ -1,54 +1,76 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Produtos Amway</title>
-    <link rel="stylesheet" href="style.css">
+    <meta name="description" content="Conheça os produtos e serviços oferecidos por Kadson Pedro.">
+    <title>Produtos - Kadson Pedro</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <h1>Produtos Amway</h1>
-        <nav>
-            <ul>
+    <!-- Cabeçalho -->
+    <header class="header">
+        <div class="container logo-container">
+            <img src="images/logo.png" alt="Logotipo Kadson Pedro" class="logo">
+            <h1>Produtos e Serviços</h1>
+            <p>Descubra como podemos ajudar você a crescer e realizar seus objetivos.</p>
+        </div>
+        <nav class="navbar">
+            <ul class="nav-links">
                 <li><a href="index.html">Início</a></li>
                 <li><a href="sobre.html">Sobre</a></li>
+                <li><a href="produtos.html" class="active">Produtos</a></li>
                 <li><a href="contato.html">Contato</a></li>
-                <li><a href="politica-privacidade.html">Política de Privacidade</a></li>
+                <li><a href="politica.html">Política de Privacidade</a></li>
             </ul>
         </nav>
     </header>
 
-    <main>
-        <section class="products">
-            <!-- Produto 1 -->
-            <div class="product-card">
-                <img src="https://i.postimg.cc/q77MqpG2/480-Daily-45-126007.jpg" alt="Daily Plus Nutrilite">
-                <h3>Daily Plus Nutrilite</h3>
-                <p>Nutrilite™ Daily é um multivitamínico e multimineral que fornece 22 vitaminas e minerais essenciais, com exclusivo suco de acerola desidratado além de luteína.</p>
-                <a href="https://www.amway.com.br/pt/Multivitaminico-Nutrilite-Daily-Plus-45-tabletes/p/126007/60338539204">Saiba mais</a>
+    <!-- Conteúdo principal -->
+    <main class="products-section">
+        <div class="container">
+            <h2>Nossos Produtos e Serviços</h2>
+            <div class="product-grid">
+                <!-- Produto 1 -->
+                <div class="product-card">
+                    <img src="images/produto1.jpg" alt="Imagem do Produto 1">
+                    <h3>Consultoria Educacional</h3>
+                    <p>Oferecemos suporte para escolas e educadores que desejam melhorar seus processos pedagógicos.</p>
+                    <a href="#" class="btn">Saiba mais</a>
+                </div>
+
+                <!-- Produto 2 -->
+                <div class="product-card">
+                    <img src="images/produto2.jpg" alt="Imagem do Produto 2">
+                    <h3>Treinamentos de Produtividade</h3>
+                    <p>Aprenda técnicas práticas para melhorar sua organização e atingir seus objetivos mais rápido.</p>
+                    <a href="#" class="btn">Saiba mais</a>
+                </div>
+
+                <!-- Produto 3 -->
+                <div class="product-card">
+                    <img src="images/produto3.jpg" alt="Imagem do Produto 3">
+                    <h3>Mentoria em Marketing</h3>
+                    <p>Receba orientações personalizadas para alavancar sua presença no mercado com estratégias eficazes.</p>
+                    <a href="#" class="btn">Saiba mais</a>
+                </div>
+
+                <!-- Produto 4 -->
+                <div class="product-card">
+                    <img src="images/produto4.jpg" alt="Imagem do Produto 4">
+                    <h3>Desenvolvimento Pessoal</h3>
+                    <p>Workshops e materiais que ajudam você a desenvolver habilidades para crescer em todas as áreas.</p>
+                    <a href="#" class="btn">Saiba mais</a>
+                </div>
             </div>
-            <!-- Produto 2 -->
-            <div class="product-card">
-                <img src="https://i.postimg.cc/T3dTNTFB/480x480-omega-3.png" alt="Ômega 3 Nutrilite">
-                <h3>Ômega 3 Nutrilite</h3>
-                <p>O NUTRILITE™ Ômega 3 contém 90 cápsulas de óleo de peixe e oferece 1.800 mg (1.200 EPA/ 600 DHA) seguindo a recomendação diária de uso. Os ácidos graxos ômega 3 EPA e DHA auxiliam na redução dos triglicerídeos.</p>
-                <a href="https://www.amway.com.br/pt/Omega-3-Nutrilite---Oleo-de-Peixe-em-Capsulas-/p/A8919/60338539204">Saiba mais</a>
-            </div>
-            <!-- Produto 3 -->
-            <div class="product-card">
-                <img src="https://i.postimg.cc/wMQSDmqM/286893-BODY-KEY-BAUNILHA-480.jpg" alt="Shake Baunilha Cremoso Nutrilite">
-                <h3>Shake Baunilha Cremoso Nutrilite</h3>
-                <p>O novo sabor do Shake BodyKey ajuda na redução de peso ao substituir 2 das 3 principais refeições diárias.</p>
-                <p>Sua fórmula conta com apenas 201 calorias* e é fonte de cálcio, fibras e vitamina D. O Shake BodyKey Baunilha Cremoso ainda oferece 12 vitaminas e 13 minerais para você perder peso do seu jeito!</p>
-                <p>O sabor baunilha cremoso é um coringa para criar diversar receitas e deixar o seu Shake BodyKey ainda melhor. Experimente!</p>
-                <a href="https://www.amway.com.br/pt/Shake-BodyKey-Baunilha-Cremoso/p/286893/60338539204">Saiba mais</a>
-            </div>
-        </section>
+        </div>
     </main>
 
-    <footer>
-        <p>&copy; 2025 Blog Kadson Pedro - Todos os direitos reservados.</p>
+    <!-- Rodapé -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Blog Kadson Pedro | Kadson Pedro. Todos os direitos reservados.</p>
+        </div>
     </footer>
 </body>
 </html>
