@@ -2,7 +2,7 @@
 Blog criado para compartilhar ideias sobre **mentalidade**, **educação**, **produtividade**, e muito mais.
 
 ## 🔗 Link do Blog
-[Acesse o blog aqui](https://kpedro.github.io/blog-kadson-pedro/)
+[Acesse o blog aqui](https://kadsonpedro.com.br)
 
 ## 📖 Sobre
 Este blog é um espaço para explorar estratégias práticas e reflexões para o desenvolvimento pessoal e profissional.
