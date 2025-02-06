@@ -3,7 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kadson Pedro | Educador & Empreendedor</title>
+    <meta name="description" content="Kadson Pedro: Educador, Empreendedor e Especialista em Marketing Multinível. Descubra artigos sobre saúde, bem-estar e eventos pedagógicos.">
+    <meta name="keywords" content="Saúde, Bem-Estar, Marketing Multinível, Eventos, Pedagogia">
+    <meta name="author" content="Kadson Pedro">
+    <title>Kadson Pedro | Saúde, Bem-Estar & Empreendedorismo</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -161,6 +164,24 @@
         .social-links a:hover {
             color: #fff;
         }
+
+        #eventos .event-card {
+            background: #fff;
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            margin-bottom: 1rem;
+        }
+
+        #eventos .event-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        #eventos .event-card p {
+            margin-bottom: 0.5rem;
+            color: var(--accent-color);
+        }
     </style>
 </head>
 <body>
@@ -172,8 +193,8 @@
             <nav aria-label="Menu principal">
                 <ul>
                     <li><a href="index.html">Início</a></li>
-                    <li><a href="mentorias.html">Mentorias</a></li>
-                    <li><a href="cursos.html">Cursos</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="eventos.html">Eventos</a></li>
                     <li><a href="sobre.html">Sobre</a></li>
                     <li><a href="contato.html">Contato</a></li>
                 </ul>
@@ -185,72 +206,51 @@
         <section id="home">
             <div class="container">
                 <h1>Kadson Pedro</h1>
-                <p>Desenvolvedor & Educador</p>
-                <p class="subtitle">Transformando conhecimento técnico em resultados práticos</p>
+                <p>Educador & Empreendedor</p>
+                <p class="subtitle">Transformando vidas com educação, saúde e bem-estar</p>
+                <a href="blog.html#articles-grid" class="read-more">Explorar Artigos</a>
+                <a href="eventos.html#events-grid" class="read-more">Ver Eventos</a>
             </div>
         </section>
 
         <section id="posts-container" class="container">
             <h2>Blog</h2>
             <div class="posts-grid">
-                <!-- Post Principal -->
                 <article class="post">
-                    <img src="assets/images/saude-mental.jpg" alt="Desenvolvimento Pessoal" class="post-image">
+                    <img src="assets/images/saude-mental.jpg" alt="Dicas de bem-estar" class="post-image">
                     <div class="post-content">
-                        <span class="post-category">Mentalidade</span>
-                        <h3>Saúde Mental na Era Digital</h3>
-                        <p>Estratégias práticas para manter o equilíbrio emocional enquanto trabalha com tecnologia.</p>
+                        <h3>Dicas de Bem-Estar para Aumentar sua Energia Diária</h3>
+                        <p>Descubra estratégias para melhorar sua qualidade de vida.</p>
                         <a href="post.html?post=saude-mental" class="read-more">Leia mais</a>
                     </div>
                 </article>
-
-                <!-- Segundo Post -->
                 <article class="post">
-                    <img src="assets/images/produtividade.jpg" alt="Produtividade" class="post-image">
+                    <img src="assets/images/produtividade.jpg" alt="Marketing multinível" class="post-image">
                     <div class="post-content">
-                        <span class="post-category">Produtividade</span>
-                        <h3>Método Pomodoro para Desenvolvedores</h3>
-                        <p>Como usar ciclos de foco para aumentar sua produtividade e qualidade de código.</p>
+                        <h3>Marketing Multinível: Como Iniciar no Mercado de Bem-Estar</h3>
+                        <p>Um guia para novos empreendedores.</p>
                         <a href="post.html?post=produtividade" class="read-more">Leia mais</a>
                     </div>
                 </article>
-
-                <!-- Terceiro Post -->
-                <article class="post">
-                    <img src="assets/images/mentoria.jpg" alt="Mentoria" class="post-image">
-                    <div class="post-content">
-                        <span class="post-category">Desenvolvimento</span>
-                        <h3>Do Junior ao Sênior: Guia Completo</h3>
-                        <p>Um roadmap prático para acelerar sua carreira em desenvolvimento de software.</p>
-                        <a href="post.html?post=mentoria" class="read-more">Leia mais</a>
-                    </div>
-                </article>
             </div>
         </section>
 
-        <section id="em-breve" class="container">
-            <h2>Em Breve</h2>
-            <div class="coming-soon-grid">
-                <div class="coming-soon-card">
-                    <i class="fas fa-chalkboard-teacher"></i>
-                    <h3>Mentorias</h3>
-                    <p>Em breve, mentorias personalizadas para acelerar seu desenvolvimento profissional.</p>
-                </div>
-                <div class="coming-soon-card">
-                    <i class="fas fa-laptop-code"></i>
-                    <h3>Cursos</h3>
-                    <p>Cursos práticos em desenvolvimento sendo preparados.</p>
-                </div>
+        <section id="orientacao-empresarial" class="container">
+            <h2>Orientação Empresarial</h2>
+            <div class="event-card">
+              <h3>Orientação Empresarial: Oportunidade para Seu Negócio</h3>
+              <p>Plataforma: Zoom</p>
+              <p>Data e Hora: Durante a semana, a partir das 21h (Horário de Brasília)</p>
+              <p>Descrição: Participe de nossas sessões de orientação empresarial para aprimorar suas estratégias e expandir sua visão de mercado.</p>
+              <a href="contato.html#formulario" class="read-more">Entre em contato para mais informações</a>
             </div>
-        </section>
+          </section>
+          
     </main>
 
     <footer>
         <div class="container">
-            <p>© 2024 Kadson Pedro. Todos os direitos reservados.</p>
-            <div class="footer-links">
-                <a href="politica.html">Política de Privacidade</a>
-            </div>
+            <p>&copy; 2025 Kadson Pedro. Inspirando vidas com saúde, bem-estar e educação.</p>
             <div class="social-links">
                 <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                 <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
@@ -263,4 +263,3 @@
     <script src="assets/js/script.js"></script>
 </body>
 </html>
-
