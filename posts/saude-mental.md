@@ -1,6 +1,6 @@
 # Dicas de Bem-Estar para Aumentar sua Energia Diária
 
-📅 **20 de Março de 2024**
+📅 **20 de Dezembro de 2024**
 ✍️ **Por Kadson Pedro**
 🏷️ **Saúde & Bem-Estar**
 

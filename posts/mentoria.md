@@ -1,7 +1,8 @@
 # Como Melhorar sua Produtividade: Dicas Práticas para o Dia a Dia
 
-✍️ Por [Seu Nome]  
-🏷️ Produtividade
+📅 **06 de Fevereiro de 2025**
+✍️ **Por Kadson Pedro**
+🏷️ **Produtividade**
 
 ![Produtividade no Trabalho](../assets/images/produtividade.jpg)  
 _Maximize seus resultados com estratégias simples e eficazes._

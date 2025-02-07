@@ -1,6 +1,6 @@
 # Marketing Multinível: Como Iniciar no Mercado de Bem-Estar
 
-📅 **15 de Abril de 2024**
+📅 **15 de janeiro de 2025**
 ✍️ **Por Kadson Pedro**
 🏷️ **Marketing & Empreendedorismo**
 
