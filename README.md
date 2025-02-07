@@ -1,53 +1,38 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
 # Blog Kadson Pedro
 
-Blog pessoal e profissional focado em desenvolvimento, tecnologia e crescimento profissional.
+Bem-vindo ao **Blog Kadson Pedro**! Este é um blog pessoal e profissional focado em **desenvolvimento**, **tecnologia** e **crescimento profissional**.
+
+---
 
 ## 🚀 Tecnologias
 
-- HTML5
-- CSS3
-- JavaScript
-- Marked.js para Markdown
-- EmailJS para formulários
+O blog foi desenvolvido utilizando as seguintes tecnologias:
 
-## 📂 Estrutura
+- **HTML5**: Estruturação de conteúdo web.
+- **CSS3**: Estilização visual e responsiva.
+- **JavaScript**: Interatividade e dinamismo.
+- **Marked.js**: Conversão de Markdown para HTML.
+- **EmailJS**: Integração para envio de formulários por e-mail.
 
-- `/posts`: Artigos em Markdown
-- `/assets`: Recursos estáticos (CSS, JS, imagens)
-- Páginas principais: index, blog, mentorias, cursos
+---
 
-## 📝 CMS
+## 🌟 Funcionalidades
 
-Posts são escritos em Markdown e convertidos para HTML dinamicamente.
+- Leitura de artigos organizados por temas.
+- Formulário de contato para mensagens e reuniões online.
+- Exibição de planos e serviços de marketing.
+- Totalmente responsivo e otimizado para dispositivos móveis.
 
-## 📧 Contato
+---
 
-Para contribuições ou dúvidas, entre em contato:
-- Site: [kadsonpedro.com.br](https://kadsonpedro.com.br)
-- Email: [seu-email@dominio.com](mailto:seu-email@dominio.com)
+## 🎯 Como Executar
 
-## 📄 Licença
+1. Clone o repositório:
+   ```bash
+   git clone https://github.com/kpedro/blog-kadson-pedro.git
 
-MIT License - Veja o arquivo [LICENSE.md](LICENSE.md) para detalhes. 
-=======
-# kadsonpedro.github.io
->>>>>>> 22ae62e6f651658cd78c390f8b218559f704597c
-=======
-# Blog Kadson Pedro
-Blog criado para compartilhar ideias sobre **mentalidade**, **educação**, **produtividade**, e muito mais.
+### **Como Personalizar**
+1. Substitua os links e informações de contato pelas suas.
+2. Adicione qualquer funcionalidade adicional que seja específica ao seu blog.
 
-## 🔗 Link do Blog
-[Acesse o blog aqui](https://kadsonpedro.com.br)
-
-## 📖 Sobre
-Este blog é um espaço para explorar estratégias práticas e reflexões para o desenvolvimento pessoal e profissional.
-
-## 🛠️ Tecnologias
-- **HTML**: Estrutura do blog.
-- **CSS**: Estilos visuais.
-
-## 📝 Como contribuir
-Sinta-se à vontade para abrir uma issue ou fazer um fork do repositório para sugerir melhorias.
->>>>>>> b717b03e2297934797b9839f8752763d1100e9d9
+Se precisar de mais ajustes ou ajuda, é só avisar! 😊
