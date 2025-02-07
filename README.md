@@ -34,5 +34,3 @@ O blog foi desenvolvido utilizando as seguintes tecnologias:
 ### **Como Personalizar**
 1. Substitua os links e informações de contato pelas suas.
 2. Adicione qualquer funcionalidade adicional que seja específica ao seu blog.
-
-Se precisar de mais ajustes ou ajuda, é só avisar! 😊
