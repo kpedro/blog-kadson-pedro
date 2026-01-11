@@ -3,12 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Conheça Kadson Pedro: educador, empreendedor e especialista em marketing de relacionamento e bem-estar. Saiba mais sobre sua missão e metodologia.">
+    <meta name="keywords" content="Sobre, Kadson Pedro, Educador, Empreendedor, Marketing de Relacionamento">
+    <meta name="author" content="Kadson Pedro">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://kadsonpedro.com.br/sobre.html">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://kadsonpedro.com.br/sobre.html">
+    <meta property="og:title" content="Sobre - Kadson Pedro">
+    <meta property="og:description" content="Conheça Kadson Pedro: educador, empreendedor e especialista em marketing de relacionamento e bem-estar.">
+    <meta property="og:image" content="https://kadsonpedro.com.br/assets/images/logo-blog.png">
+    <meta property="og:site_name" content="Kadson Pedro">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Sobre - Kadson Pedro">
+    <meta name="twitter:description" content="Conheça Kadson Pedro: educador, empreendedor e especialista em marketing de relacionamento.">
+    
     <title>Sobre - Kadson Pedro</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "AboutPage",
+      "name": "Sobre Kadson Pedro",
+      "description": "Conheça Kadson Pedro: educador, empreendedor e especialista",
+      "url": "https://kadsonpedro.com.br/sobre.html",
+      "mainEntity": {
+        "@type": "Person",
+        "name": "Kadson Pedro",
+        "jobTitle": "Educador e Empreendedor",
+        "description": "Especialista em marketing de relacionamento e bem-estar"
+      }
+    }
+    </script>
     <style>
         :root {
             --primary-color: #2D3250;
@@ -69,15 +105,19 @@
     </style>
 </head>
 <body>
+    <a href="#main-content" class="skip-to-content">Pular para o conteúdo principal</a>
     <header>
         <div class="container">
             <div class="logo">
-                <a href="index.html">Kadson Pedro</a>
+                <a href="index.html" aria-label="Kadson Pedro - Página inicial">Kadson Pedro</a>
             </div>
+            <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
             <nav aria-label="Menu principal">
                 <ul>
                     <li><a href="index.html">Início</a></li>
-                    <li><a href="blog.html">blog</a></li>
+                    <li><a href="blog.html">Blog</a></li>
                     <li><a href="eventos.html">Eventos</a></li>
                     <li><a href="sobre.html">Sobre</a></li>
                     <li><a href="contato.html">Contato</a></li>
@@ -86,7 +126,7 @@
         </div>
     </header>
 
-    <main class="container">
+    <main id="main-content" class="container">
         <section class="about-section">
             <h1>Sobre Kadson Pedro</h1>
             <p>
@@ -134,6 +174,7 @@
     </footer>
 
     <script src="assets/js/script.js"></script>
+    <script src="assets/js/mobile-menu.js"></script>
 </body>
 </html>
     

@@ -1,4 +1,12 @@
 {
+  "name": "blog-kadson-pedro",
+  "version": "1.0.0",
+  "description": "Blog pessoal e profissional de Kadson Pedro",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
   "dependencies": {
     "express": "^4.21.2"
   },

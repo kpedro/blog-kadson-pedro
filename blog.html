@@ -6,12 +6,40 @@
     <meta name="description" content="Kadson Pedro: Educador, Empreendedor e Especialista em Marketing Multinível. Descubra artigos sobre saúde, bem-estar e desenvolvimento profissional.">
     <meta name="keywords" content="Saúde, Bem-Estar, Marketing Multinível, Desenvolvimento Pessoal, Artigos">
     <meta name="author" content="Kadson Pedro">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://kadsonpedro.com.br/blog.html">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://kadsonpedro.com.br/blog.html">
+    <meta property="og:title" content="Kadson Pedro | Blog de Saúde e Bem-Estar">
+    <meta property="og:description" content="Descubra artigos sobre saúde, bem-estar e desenvolvimento profissional com Kadson Pedro.">
+    <meta property="og:image" content="https://kadsonpedro.com.br/assets/images/logo-blog.png">
+    <meta property="og:site_name" content="Kadson Pedro">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Kadson Pedro | Blog de Saúde e Bem-Estar">
+    <meta name="twitter:description" content="Descubra artigos sobre saúde, bem-estar e desenvolvimento profissional.">
+    <meta name="twitter:image" content="https://kadsonpedro.com.br/assets/images/logo-blog.png">
+    
     <title>Kadson Pedro | Blog de Saúde e Bem-Estar</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": "Blog Kadson Pedro",
+      "description": "Artigos sobre saúde, bem-estar e desenvolvimento profissional",
+      "url": "https://kadsonpedro.com.br/blog.html"
+    }
+    </script>
     <style>
         :root {
             --primary-color: #2D3250;
@@ -166,13 +194,18 @@
             color: #fff;
         }
     </style>
+    <!-- CSS duplicado removido - tudo está em assets/css/style.css -->
 </head>
 <body>
+    <a href="#main-content" class="skip-to-content">Pular para o conteúdo principal</a>
     <header>
         <div class="container">
             <div class="logo">
-                <a href="index.html">Kadson Pedro</a>
+                <a href="index.html" aria-label="Kadson Pedro - Página inicial">Kadson Pedro</a>
             </div>
+            <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
             <nav aria-label="Menu principal">
                 <ul>
                     <li><a href="index.html">Início</a></li>
@@ -185,7 +218,7 @@
         </div>
     </header>
 
-    <main>
+    <main id="main-content">
         <section id="home">
             <div class="container">
                 <h1>Blog Kadson Pedro</h1>
@@ -198,22 +231,22 @@
             <h2>Todos os Artigos</h2>
             <div class="articles-grid">
                 <div class="article-card">
-                    <img src="assets/images/saude-mental.jpg" alt="Saúde Mental">
+                    <img src="assets/images/saude-mental.jpg" alt="Dicas de bem-estar para aumentar energia diária" loading="lazy">
                     <h3>Dicas de Bem-Estar para Aumentar sua Energia Diária</h3>
                     <p>Bem-Estar e Energia: Pequenas mudanças, grandes resultados.</p>
-                    <a href="post.html?post=saude-mental">Leia mais</a>
+                    <a href="post.html?post=saude-mental" rel="noopener">Leia mais</a>
                 </div>
                 <div class="article-card">
-                    <img src="assets/images/produtividade.jpg" alt="Produtividade">
+                    <img src="assets/images/produtividade.jpg" alt="Marketing multinível no mercado de bem-estar" loading="lazy">
                     <h3>Marketing Multinível: Como Iniciar no Mercado de Bem-Estar</h3>
                     <p>Transforme saúde e bem-estar em oportunidades de sucesso.</p>
-                    <a href="post.html?post=produtividade">Leia mais</a>
+                    <a href="post.html?post=produtividade" rel="noopener">Leia mais</a>
                 </div>
                 <div class="article-card">
-                    <img src="assets/images/mentoria.jpg" alt="Mentoria">
+                    <img src="assets/images/mentoria.jpg" alt="Como melhorar produtividade com dicas práticas" loading="lazy">
                     <h3>Como Melhorar sua Produtividade: Dicas Práticas para o Dia a Dia</h3>
                     <p>Maximize seus resultados com estratégias simples e eficazes.</p>
-                    <a href="post.html?post=mentoria">Leia mais</a>
+                    <a href="post.html?post=mentoria" rel="noopener">Leia mais</a>
                 </div>
             </div>
         </section>
@@ -232,5 +265,6 @@
     </footer>
 
     <script src="assets/js/script.js"></script>
+    <script src="assets/js/mobile-menu.js"></script>
 </body>
 </html>

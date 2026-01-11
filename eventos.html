@@ -6,12 +6,43 @@
     <meta name="description" content="Kadson Pedro: Educador, Empreendedor e Especialista em Marketing Multinível. Confira eventos focados em saúde, bem-estar e desenvolvimento pessoal.">
     <meta name="keywords" content="Saúde, Bem-Estar, Marketing Multinível, Eventos, Pedagogia">
     <meta name="author" content="Kadson Pedro">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://kadsonpedro.com.br/eventos.html">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://kadsonpedro.com.br/eventos.html">
+    <meta property="og:title" content="Kadson Pedro | Eventos de Saúde e Bem-Estar">
+    <meta property="og:description" content="Confira eventos focados em saúde, bem-estar e desenvolvimento pessoal com Kadson Pedro.">
+    <meta property="og:image" content="https://kadsonpedro.com.br/assets/images/logo-blog.png">
+    <meta property="og:site_name" content="Kadson Pedro">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Kadson Pedro | Eventos de Saúde e Bem-Estar">
+    <meta name="twitter:description" content="Confira eventos focados em saúde, bem-estar e desenvolvimento pessoal.">
+    
     <title>Kadson Pedro | Eventos de Saúde e Bem-Estar</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Event",
+      "name": "Eventos Kadson Pedro",
+      "description": "Workshops e eventos sobre empreendedorismo, saúde e bem-estar",
+      "url": "https://kadsonpedro.com.br/eventos.html",
+      "organizer": {
+        "@type": "Person",
+        "name": "Kadson Pedro"
+      }
+    }
+    </script>
     <style>
         :root {
             --primary-color: #2D3250;
@@ -159,13 +190,18 @@
             color: #fff;
         }
     </style>
+    <!-- CSS duplicado removido - tudo está em assets/css/style.css -->
 </head>
 <body>
+    <a href="#main-content" class="skip-to-content">Pular para o conteúdo principal</a>
     <header>
         <div class="container">
             <div class="logo">
-                <a href="index.html">Kadson Pedro</a>
+                <a href="index.html" aria-label="Kadson Pedro - Página inicial">Kadson Pedro</a>
             </div>
+            <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
             <nav aria-label="Menu principal">
                 <ul>
                     <li><a href="index.html">Início</a></li>
@@ -178,7 +214,7 @@
         </div>
     </header>
 
-    <main>
+    <main id="main-content">
         <section id="home">
             <div class="container">
                 <h1>Kadson Pedro</h1>
@@ -195,19 +231,19 @@
                     <h3>Workshop: Empreendendo com Sustentabilidade e Rentabilidade</h3>
                     <p>Data: 08 de Fevereiro de 2025</p>
                     <p>Local: Online (via Zoom)</p>
-                    <a href="contato.html#formulario">Saiba Mais</a>
+                    <a href="contato.html#contact-form" rel="noopener">Saiba Mais</a>
                 </div>
                 <div class="event-card">
                     <h3>Workshop: Renda x Receita - O que é melhor para você?</h3>
                     <p>Data: 09 de Fevereiro de 2025</p>
                     <p>Local: Online (via Zoom)</p>
-                    <a href="contato.html#formulario">Inscreva-se</a>
+                    <a href="contato.html#contact-form" rel="noopener">Inscreva-se</a>
                 </div>
                 <div class="event-card">
                     <h3>Workshop: Como construir seu negócio em parceria com a Amway</h3>
                     <p>Data: 11 de Fevereiro de 2025</p>
                     <p>Local: Online (via Zoom)</p>
-                    <a href="contato.html#formulario">Garanta sua Vaga</a>
+                    <a href="contato.html#contact-form" rel="noopener">Garanta sua Vaga</a>
                 </div>
             </div>
         </section>
@@ -226,5 +262,6 @@
     </footer>
 
     <script src="assets/js/script.js"></script>
+    <script src="assets/js/mobile-menu.js"></script>
 </body>
 </html>

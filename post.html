@@ -3,24 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog - Kadson Pedro</title>
-    <!-- Meta tags para compartilhamento -->
+    <meta name="description" content="Leia artigos sobre saúde, bem-estar e desenvolvimento profissional no blog de Kadson Pedro.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://kadsonpedro.com.br/post.html">
+    
+    <!-- Meta tags para compartilhamento (preenchidas dinamicamente) -->
+    <meta property="og:type" content="article">
     <meta property="og:title" content="" id="og-title">
     <meta property="og:description" content="" id="og-description">
     <meta property="og:image" content="" id="og-image">
     <meta property="og:url" content="" id="og-url">
+    <meta property="og:site_name" content="Kadson Pedro">
     
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="" id="twitter-title">
+    <meta name="twitter:description" content="" id="twitter-description">
+    <meta name="twitter:image" content="" id="twitter-image">
+    
+    <title>Blog - Kadson Pedro</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
+    <a href="#main-content" class="skip-to-content">Pular para o conteúdo principal</a>
     <!-- Header e navegação -->
     <header>
         <div class="container">
             <div class="logo">
-                <a href="index.html">Kadson Pedro</a>
+                <a href="index.html" aria-label="Kadson Pedro - Página inicial">Kadson Pedro</a>
             </div>
+            <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
             <nav aria-label="Menu principal">
                 <ul>
                     <li><a href="index.html">Início</a></li>
@@ -33,7 +49,7 @@
         </div>
     </header>
 
-    <main>
+    <main id="main-content">
         <section id="post-header" class="container">
             <h1 id="post-title">Carregando...</h1>
             <p id="post-meta"></p>
@@ -108,6 +124,8 @@
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script src="assets/js/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script src="assets/js/form-validation.js"></script>
+    <script src="assets/js/mobile-menu.js"></script>
     <script>
         (function() {
             emailjs.init({

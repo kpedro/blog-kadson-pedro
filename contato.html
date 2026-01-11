@@ -3,32 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Entre em contato com Kadson Pedro para mentorias, parcerias, palestras e consultoria empresarial. WhatsApp, email e redes sociais.">
+    <meta name="keywords" content="Contato, Mentoria, Consultoria, Palestras, Kadson Pedro">
+    <meta name="author" content="Kadson Pedro">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://kadsonpedro.com.br/contato.html">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://kadsonpedro.com.br/contato.html">
+    <meta property="og:title" content="Contato - Kadson Pedro">
+    <meta property="og:description" content="Entre em contato para mentorias, parcerias, palestras e consultoria empresarial.">
+    <meta property="og:image" content="https://kadsonpedro.com.br/assets/images/logo-blog.png">
+    <meta property="og:site_name" content="Kadson Pedro">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Contato - Kadson Pedro">
+    <meta name="twitter:description" content="Entre em contato para mentorias, parcerias, palestras e consultoria empresarial.">
+    
     <title>Contato - Kadson Pedro</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ContactPage",
+      "name": "Contato - Kadson Pedro",
+      "description": "Entre em contato para mentorias, parcerias, palestras e consultoria",
+      "url": "https://kadsonpedro.com.br/contato.html",
+      "mainEntity": {
+        "@type": "Person",
+        "name": "Kadson Pedro",
+        "email": "kadson.pedro@gmail.com",
+        "sameAs": [
+          "https://www.instagram.com/kadson.pedro",
+          "https://www.linkedin.com/in/kadsonpedro",
+          "https://www.youtube.com/@kadsonpedro",
+          "https://wa.me/92994314016"
+        ]
+      }
+    }
+    </script>
 </head>
 <body>
+    <a href="#main-content" class="skip-to-content">Pular para o conteúdo principal</a>
     <header>
         <div class="container">
             <div class="logo">
-                <a href="index.html">Kadson Pedro</a>
+                <a href="index.html" aria-label="Kadson Pedro - Página inicial">Kadson Pedro</a>
             </div>
+            <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
             <nav aria-label="Menu principal">
                 <ul>
                     <li><a href="index.html">Início</a></li>
                     <li><a href="blog.html">Blog</a></li>
                     <li><a href="eventos.html">Eventos</a></li>
                     <li><a href="sobre.html">Sobre</a></li>
-                    <li><a href="#contact-container">Contato</a></li>
+                    <li><a href="#contact-form">Contato</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <main>
+    <main id="main-content">
         <section class="hero">
             <div class="container">
                 <h1>Entre em Contato</h1>
@@ -42,27 +87,27 @@
             </div>
         </section>
 
-        <section class="container">
+        <section class="container" id="contact-container">
             <div class="contact-wrapper">
                 <div class="contact-info">
                     <h2>Informações de Contato</h2>
                     <div class="contact-methods">
                         <div class="contact-item">
-                            <i class="fab fa-whatsapp"></i>
-                            <p>WhatsApp: <a href="https://wa.me/92994314016" target="_blank">Clique aqui para conversar</a></p>
+                            <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                            <p>WhatsApp: <a href="https://wa.me/92994314016" target="_blank" rel="noopener noreferrer">Clique aqui para conversar</a></p>
                         </div>
                         <div class="contact-item">
-                            <i class="far fa-envelope"></i>
+                            <i class="far fa-envelope" aria-hidden="true"></i>
                             <p>Email: <a href="mailto:kadson.pedro@gmail.com">kadson.pedro@gmail.com</a></p>
                         </div>
                         <div class="contact-item">
-                            <i class="fab fa-instagram"></i>
-                            <p>Instagram: <a href="https://instagram.com/kadson.pedro" target="_blank">@kadson.pedro</a></p>
+                            <i class="fab fa-instagram" aria-hidden="true"></i>
+                            <p>Instagram: <a href="https://instagram.com/kadson.pedro" target="_blank" rel="noopener noreferrer">@kadson.pedro</a></p>
                         </div>
                     </div>
                 </div>
 
-                <form class="contact-form" id="contact-form">
+                <form class="contact-form" id="contact-form" aria-label="Formulário de contato">
                     <div class="form-group">
                         <label for="name">Nome Completo</label>
                         <input type="text" id="name" name="from_name" placeholder="Digite seu nome completo" required>
@@ -110,19 +155,19 @@
             <div class="contact-card mentoring">
                 <h3>Plano de Marketing</h3>
                 <p>Descubra como nosso plano de marketing pode ajudar seu negócio a crescer.</p>
-                <a href="#" class="cta-button">Agendar Reunião</a>
+                <a href="https://wa.me/92994314016?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20o%20Plano%20de%20Marketing" class="cta-button" target="_blank" rel="noopener noreferrer">Agendar Reunião</a>
             </div>
             
             <div class="contact-card business">
                 <h3>Reunião Online</h3>
                 <p>Agende uma reunião online com nossa equipe para discutir suas necessidades.</p>
-                <a href="#" class="cta-button">Agendar Reunião</a>
+                <a href="https://wa.me/92994314016?text=Olá!%20Gostaria%20de%20agendar%20uma%20reunião%20online" class="cta-button" target="_blank" rel="noopener noreferrer">Agendar Reunião</a>
             </div>
             
             <div class="contact-card speaking">
                 <h3>Orientação sobre Produtos</h3>
                 <p>Receba orientações detalhadas sobre nossos produtos e serviços.</p>
-                <a href="#" class="cta-button">Agendar Reunião</a>
+                <a href="https://wa.me/92994314016?text=Olá!%20Gostaria%20de%20receber%20orientação%20sobre%20os%20produtos" class="cta-button" target="_blank" rel="noopener noreferrer">Agendar Reunião</a>
             </div>
         </div>
     </main>
@@ -141,66 +186,8 @@
 
     <!-- EmailJS -->
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    <script>
-        (function() {
-            emailjs.init({
-                publicKey: "639peYCntwvgbJXOH",
-                blockHeadless: false,
-                limitRate: {
-                    throttle: 10000
-                }
-            });
-        })();
-
-        document.getElementById("contact-form").addEventListener("submit", function(e) {
-            e.preventDefault();
-
-            // Atualiza estado do botão
-            const button = this.querySelector('.submit-button');
-            const buttonText = button.querySelector('.button-text');
-            const buttonLoader = button.querySelector('.button-loader');
-            const feedback = document.getElementById('form-feedback');
-
-            buttonText.style.display = 'none';
-            buttonLoader.style.display = 'inline-block';
-            button.disabled = true;
-            feedback.style.display = 'none';
-
-            // Prepara os dados do template
-            const templateParams = {
-                from_name: document.getElementById('name').value,
-                from_email: document.getElementById('email').value,
-                phone: document.getElementById('phone').value,
-                contact_type: document.getElementById('subject').value,
-                message: document.getElementById('message').value
-            };
-
-            // Envia o email
-            emailjs.send(
-                'service_sfcgswc',
-                'template_um5hyie',
-                templateParams,
-                '639peYCntwvgbJXOH'
-            )
-            .then(function(response) {
-                console.log('SUCCESS!', response.status, response.text);
-                feedback.textContent = 'Mensagem enviada com sucesso! Retornarei em breve.';
-                feedback.className = 'form-feedback success';
-                feedback.style.display = 'block';
-                e.target.reset();
-            })
-            .catch(function(error) {
-                console.error('FAILED...', error);
-                feedback.textContent = `Erro ao enviar: ${error.text}`;
-                feedback.className = 'form-feedback error';
-                feedback.style.display = 'block';
-            })
-            .finally(function() {
-                buttonText.style.display = 'inline-block';
-                buttonLoader.style.display = 'none';
-                button.disabled = false;
-            });
-        });
-    </script>
+    <script src="assets/js/form-validation.js"></script>
+    <script src="assets/js/contact-form.js"></script>
+    <script src="assets/js/mobile-menu.js"></script>
 </body>
 </html>

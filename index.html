@@ -6,190 +6,67 @@
     <meta name="description" content="Kadson Pedro: Educador, Empreendedor e Especialista em Marketing Multinível. Descubra artigos sobre saúde, bem-estar e eventos pedagógicos.">
     <meta name="keywords" content="Saúde, Bem-Estar, Marketing Multinível, Eventos, Pedagogia">
     <meta name="author" content="Kadson Pedro">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://kadsonpedro.com.br/">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://kadsonpedro.com.br/">
+    <meta property="og:title" content="Kadson Pedro | Saúde, Bem-Estar & Empreendedorismo">
+    <meta property="og:description" content="Kadson Pedro: Educador, Empreendedor e Especialista em Marketing Multinível. Descubra artigos sobre saúde, bem-estar e eventos pedagógicos.">
+    <meta property="og:image" content="https://kadsonpedro.com.br/assets/images/logo-blog.png">
+    <meta property="og:site_name" content="Kadson Pedro">
+    <meta property="og:locale" content="pt_BR">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://kadsonpedro.com.br/">
+    <meta name="twitter:title" content="Kadson Pedro | Saúde, Bem-Estar & Empreendedorismo">
+    <meta name="twitter:description" content="Kadson Pedro: Educador, Empreendedor e Especialista em Marketing Multinível. Descubra artigos sobre saúde, bem-estar e eventos pedagógicos.">
+    <meta name="twitter:image" content="https://kadsonpedro.com.br/assets/images/logo-blog.png">
+    
     <title>Kadson Pedro | Saúde, Bem-Estar & Empreendedorismo</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
-        :root {
-            --primary-color: #2D3250;
-            --secondary-color: #424769;
-            --accent-color: #7077A1;
-            --light-color: #F6B17A;
-            --text-color: #333;
-            --bg-color: #f5f5f5;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Montserrat', sans-serif;
-        }
-
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            line-height: 1.6;
-        }
-
-        header {
-            background-color: var(--primary-color);
-            padding: 1rem 0;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        header .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo a {
-            color: var(--light-color);
-            font-size: 1.8rem;
-            font-weight: 700;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        nav ul {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-        }
-
-        nav a {
-            color: #fff;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-
-        nav a:hover {
-            color: var(--light-color);
-        }
-
-        #home {
-            padding: 4rem 0;
-            text-align: center;
-            background-color: var(--secondary-color);
-            color: #fff;
-        }
-
-        #home h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            color: var(--light-color);
-        }
-
-        .posts-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            padding: 4rem 0;
-        }
-
-        .post {
-            background: #fff;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-        }
-
-        .post:hover {
-            transform: translateY(-5px);
-        }
-
-        .post-image {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-
-        .post-content {
-            padding: 1.5rem;
-        }
-
-        .post h3 {
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-        }
-
-        .read-more {
-            display: inline-block;
-            padding: 0.5rem 1rem;
-            background-color: var(--accent-color);
-            color: #fff;
-            text-decoration: none;
-            border-radius: 5px;
-            margin-top: 1rem;
-            transition: background-color 0.3s ease;
-        }
-
-        .read-more:hover {
-            background-color: var(--primary-color);
-        }
-
-        footer {
-            background-color: var(--primary-color);
-            color: #fff;
-            text-align: center;
-            padding: 2rem 0;
-            margin-top: 4rem;
-        }
-
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            margin-top: 1rem;
-        }
-
-        .social-links a {
-            color: var(--light-color);
-            font-size: 1.5rem;
-            transition: color 0.3s ease;
-        }
-
-        .social-links a:hover {
-            color: #fff;
-        }
-
-        #eventos .event-card {
-            background: #fff;
-            border-radius: 10px;
-            padding: 1.5rem;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-            margin-bottom: 1rem;
-        }
-
-        #eventos .event-card h3 {
-            color: var(--primary-color);
-            margin-bottom: 0.5rem;
-        }
-
-        #eventos .event-card p {
-            margin-bottom: 0.5rem;
-            color: var(--accent-color);
-        }
-    </style>
+    
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Blog",
+      "name": "Kadson Pedro",
+      "description": "Blog sobre saúde, bem-estar e empreendedorismo",
+      "url": "https://kadsonpedro.com.br",
+      "author": {
+        "@type": "Person",
+        "name": "Kadson Pedro",
+        "url": "https://kadsonpedro.com.br/sobre.html",
+        "sameAs": [
+          "https://www.instagram.com/kadson.pedro",
+          "https://www.linkedin.com/in/kadsonpedro",
+          "https://www.youtube.com/@kadsonpedro"
+        ]
+      },
+      "publisher": {
+        "@type": "Person",
+        "name": "Kadson Pedro"
+      }
+    }
+    </script>
 </head>
 <body>
+    <a href="#main-content" class="skip-to-content">Pular para o conteúdo principal</a>
     <header>
         <div class="container">
             <div class="logo">
-                <a href="index.html">Kadson Pedro</a>
+                <a href="index.html" aria-label="Kadson Pedro - Página inicial">Kadson Pedro</a>
             </div>
+            <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
             <nav aria-label="Menu principal">
                 <ul>
                     <li><a href="index.html">Início</a></li>
@@ -202,7 +79,7 @@
         </div>
     </header>
 
-    <main>
+    <main id="main-content">
         <section id="home">
             <div class="container">
                 <h1>Kadson Pedro</h1>
@@ -217,19 +94,19 @@
             <h2>Blog</h2>
             <div class="posts-grid">
                 <article class="post">
-                    <img src="assets/images/saude-mental.jpg" alt="Dicas de bem-estar" class="post-image">
+                    <img src="assets/images/saude-mental.jpg" alt="Dicas de bem-estar para aumentar energia diária" class="post-image" loading="lazy">
                     <div class="post-content">
                         <h3>Dicas de Bem-Estar para Aumentar sua Energia Diária</h3>
                         <p>Descubra estratégias para melhorar sua qualidade de vida.</p>
-                        <a href="post.html?post=saude-mental" class="read-more">Leia mais</a>
+                        <a href="post.html?post=saude-mental" class="read-more" rel="noopener">Leia mais</a>
                     </div>
                 </article>
                 <article class="post">
-                    <img src="assets/images/produtividade.jpg" alt="Marketing multinível" class="post-image">
+                    <img src="assets/images/produtividade.jpg" alt="Marketing multinível no mercado de bem-estar" class="post-image" loading="lazy">
                     <div class="post-content">
                         <h3>Marketing Multinível: Como Iniciar no Mercado de Bem-Estar</h3>
                         <p>Um guia para novos empreendedores.</p>
-                        <a href="post.html?post=produtividade" class="read-more">Leia mais</a>
+                        <a href="post.html?post=produtividade" class="read-more" rel="noopener">Leia mais</a>
                     </div>
                 </article>
             </div>
@@ -242,7 +119,7 @@
               <p>Plataforma: Zoom</p>
               <p>Data e Hora: Durante a semana, a partir das 21h (Horário de Brasília)</p>
               <p>Descrição: Participe de nossas sessões de orientação empresarial para aprimorar suas estratégias e expandir sua visão de mercado.</p>
-              <a href="contato.html#formulario" class="read-more">Entre em contato para mais informações</a>
+              <a href="contato.html#contact-form" class="read-more" rel="noopener">Entre em contato para mais informações</a>
             </div>
           </section>
           
@@ -261,5 +138,6 @@
     </footer>
 
     <script src="assets/js/script.js"></script>
+    <script src="assets/js/mobile-menu.js"></script>
 </body>
 </html>

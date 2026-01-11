@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://kadsonpedro.com.br/sitemap.xml
+
+# Bloquear arquivos desnecessários
+Disallow: /node_modules/
+Disallow: /*.json$
+Disallow: /server.js
