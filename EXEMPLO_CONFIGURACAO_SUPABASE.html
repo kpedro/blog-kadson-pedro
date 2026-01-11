@@ -1,0 +1,27 @@
+<!-- 
+    EXEMPLO: Como adicionar configuração do Supabase no index.html
+    
+    Adicione este script ANTES de carregar os scripts de email marketing:
+-->
+
+<script>
+    // Configuração do Supabase para o Blog
+    // Substitua pelos valores reais do seu projeto Supabase
+    window.SUPABASE_CONFIG = {
+        url: 'https://seu-projeto-id.supabase.co',  // Ex: https://abcdefghijklmnop.supabase.co
+        anonKey: 'sua-chave-anon-key-aqui'          // Chave anon/public do Supabase
+    };
+</script>
+
+<!-- Depois carregue os scripts -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script src="assets/js/email-marketing.js"></script>
+<script src="assets/js/email-marketing-resend.js"></script>
+<script src="assets/js/lead-capture.js"></script>
+
+<!-- 
+    O sistema irá:
+    1. Tentar usar Resend + Supabase (se configurado)
+    2. Fallback para sistema local (localStorage) se não disponível
+    3. Funciona offline e online!
+-->
