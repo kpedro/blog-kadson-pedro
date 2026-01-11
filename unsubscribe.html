@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descadastrar da Newsletter - Kadson Pedro</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/modern-blog.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container" style="max-width: 600px; margin: 4rem auto; padding: 2rem;">
+        <div style="background: var(--white); border-radius: var(--border-radius); padding: 3rem; box-shadow: var(--shadow-md); text-align: center;">
+            <div style="font-size: 4rem; color: var(--accent-color); margin-bottom: 1rem;">
+                <i class="fas fa-envelope-open-text"></i>
+            </div>
+            <h1 style="color: var(--primary-color); margin-bottom: 1rem;">Descadastrar da Newsletter</h1>
+            <p style="color: var(--gray-dark); margin-bottom: 2rem;">
+                Tem certeza que deseja parar de receber nossos emails?
+            </p>
+            
+            <div id="unsubscribe-form">
+                <input 
+                    type="email" 
+                    id="unsubscribe-email" 
+                    placeholder="Seu email"
+                    class="form-control"
+                    style="margin-bottom: 1rem;"
+                    required
+                >
+                <button 
+                    class="btn btn-primary" 
+                    id="btn-unsubscribe"
+                    style="width: 100%;"
+                >
+                    Descadastrar
+                </button>
+            </div>
+            
+            <div id="unsubscribe-result" style="display: none; margin-top: 2rem;">
+                <div id="result-message"></div>
+                <a href="index.html" class="btn btn-secondary" style="margin-top: 1rem;">
+                    Voltar ao Blog
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Pega email da URL se disponível
+        const urlParams = new URLSearchParams(window.location.search);
+        const emailFromUrl = urlParams.get('email');
+        if (emailFromUrl) {
+            document.getElementById('unsubscribe-email').value = decodeURIComponent(emailFromUrl);
+        }
+
+        document.getElementById('btn-unsubscribe').addEventListener('click', async function() {
+            const email = document.getElementById('unsubscribe-email').value.trim();
+            
+            if (!email) {
+                alert('Por favor, insira seu email.');
+                return;
+            }
+
+            const btn = this;
+            btn.disabled = true;
+            btn.textContent = 'Processando...';
+
+            try {
+                // Tenta usar sistema Resend se disponível
+                if (window.emailMarketing && typeof window.emailMarketing.unsubscribe === 'function') {
+                    const result = await window.emailMarketing.unsubscribe(email);
+                    
+                    if (result.success) {
+                        showResult('Você foi descadastrado com sucesso. Não receberá mais nossos emails.', 'success');
+                    } else {
+                        showResult(result.error || 'Erro ao processar descadastro.', 'error');
+                    }
+                } else {
+                    // Fallback: remove do localStorage
+                    const subscribers = JSON.parse(localStorage.getItem('blog_subscribers') || '[]');
+                    const updated = subscribers.map(sub => {
+                        if (sub.email === email.toLowerCase()) {
+                            return { ...sub, status: 'unsubscribed' };
+                        }
+                        return sub;
+                    });
+                    localStorage.setItem('blog_subscribers', JSON.stringify(updated));
+                    
+                    showResult('Você foi descadastrado com sucesso.', 'success');
+                }
+            } catch (error) {
+                console.error('Erro:', error);
+                showResult('Erro ao processar. Tente novamente.', 'error');
+            } finally {
+                btn.disabled = false;
+                btn.textContent = 'Descadastrar';
+            }
+        });
+
+        function showResult(message, type) {
+            document.getElementById('unsubscribe-form').style.display = 'none';
+            const resultDiv = document.getElementById('unsubscribe-result');
+            const messageDiv = document.getElementById('result-message');
+            
+            messageDiv.textContent = message;
+            messageDiv.style.color = type === 'success' ? '#4caf50' : '#f44336';
+            messageDiv.style.fontWeight = '600';
+            messageDiv.style.marginBottom = '1rem';
+            
+            resultDiv.style.display = 'block';
+        }
+    </script>
+</body>
+</html>

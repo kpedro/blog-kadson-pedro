@@ -1,11 +1,13 @@
 // Admin Newsletter - Funcionalidades
 document.addEventListener('DOMContentLoaded', function() {
-    if (typeof emailMarketing === 'undefined') {
-        console.error('Sistema de email marketing não está carregado!');
-        return;
-    }
-
-    initializeAdmin();
+    // Aguarda sistema carregar (pode ser local ou Resend)
+    setTimeout(() => {
+        if (typeof emailMarketing === 'undefined') {
+            console.error('Sistema de email marketing não está carregado!');
+            return;
+        }
+        initializeAdmin();
+    }, 500);
 });
 
 function initializeAdmin() {
@@ -16,18 +18,37 @@ function initializeAdmin() {
 }
 
 // Carrega estatísticas
-function loadStats() {
-    const stats = emailMarketing.getStats();
+async function loadStats() {
+    let stats;
     
-    document.getElementById('stat-total').textContent = stats.total;
-    document.getElementById('stat-active').textContent = stats.active;
-    document.getElementById('stat-today').textContent = stats.todaySubscriptions;
-    document.getElementById('stat-campaigns').textContent = stats.campaigns;
+    // Tenta carregar do Supabase se disponível
+    if (emailMarketing && typeof emailMarketing.getStats === 'function') {
+        stats = await emailMarketing.getStats();
+    } else if (emailMarketing && typeof emailMarketing.getStats === 'function') {
+        stats = emailMarketing.getStats();
+    } else {
+        stats = { total: 0, active: 0, todaySubscriptions: 0, campaigns: 0 };
+    }
+    
+    document.getElementById('stat-total').textContent = stats.total || 0;
+    document.getElementById('stat-active').textContent = stats.active || 0;
+    document.getElementById('stat-today').textContent = stats.todaySubscriptions || 0;
+    document.getElementById('stat-campaigns').textContent = stats.campaigns || 0;
 }
 
 // Carrega lista de inscritos
-function loadSubscribers() {
-    const subscribers = emailMarketing.loadSubscribers();
+async function loadSubscribers() {
+    let subscribers;
+    
+    // Tenta carregar do Supabase se disponível
+    if (emailMarketing && typeof emailMarketing.getSubscribers === 'function') {
+        subscribers = await emailMarketing.getSubscribers();
+    } else if (emailMarketing && typeof emailMarketing.loadSubscribers === 'function') {
+        subscribers = emailMarketing.loadSubscribers();
+    } else {
+        subscribers = [];
+    }
+    
     const tbody = document.getElementById('subscribers-tbody');
     
     if (subscribers.length === 0) {
@@ -69,8 +90,18 @@ function loadSubscribers() {
 }
 
 // Carrega campanhas
-function loadCampaigns() {
-    const campaigns = emailMarketing.loadCampaigns();
+async function loadCampaigns() {
+    let campaigns = [];
+    
+    // Tenta carregar do Supabase se disponível
+    if (emailMarketing && typeof emailMarketing.loadCampaigns === 'function') {
+        campaigns = emailMarketing.loadCampaigns();
+    } else {
+        // Fallback: busca do localStorage ou vazio
+        const stored = localStorage.getItem('blog_campaigns');
+        campaigns = stored ? JSON.parse(stored) : [];
+    }
+    
     const container = document.getElementById('campaigns-list');
     
     if (campaigns.length === 0) {
@@ -102,11 +133,19 @@ function loadCampaigns() {
 function setupEventListeners() {
     // Botões de ação
     document.getElementById('btn-new-campaign').addEventListener('click', openCampaignModal);
-    document.getElementById('btn-export').addEventListener('click', () => emailMarketing.exportSubscribers());
-    document.getElementById('btn-refresh').addEventListener('click', () => {
-        loadStats();
-        loadSubscribers();
-        loadCampaigns();
+    document.getElementById('btn-export').addEventListener('click', async () => {
+        if (emailMarketing && typeof emailMarketing.exportSubscribers === 'function') {
+            emailMarketing.exportSubscribers();
+        } else {
+            // Fallback: exporta do localStorage
+            const subscribers = await loadSubscribers();
+            exportToCSV(subscribers);
+        }
+    });
+    document.getElementById('btn-refresh').addEventListener('click', async () => {
+        await loadStats();
+        await loadSubscribers();
+        await loadCampaigns();
         showNotification('Dados atualizados!', 'success');
     });
 
@@ -200,8 +239,14 @@ async function sendCampaign() {
             return;
         }
 
-        // Envia campanha
-        const result = await emailMarketing.sendCampaign(subject, content);
+        // Envia campanha (usa Resend se disponível, senão fallback)
+        let result;
+        if (emailMarketing && typeof emailMarketing.sendCampaign === 'function') {
+            result = await emailMarketing.sendCampaign(subject, content);
+        } else {
+            // Fallback para sistema local
+            result = { success: false, error: 'Sistema de envio não disponível. Configure Resend + Supabase.' };
+        }
 
         if (result.success) {
             showNotification(
@@ -236,27 +281,47 @@ function filterSubscribers() {
 }
 
 // Toggle status do inscrito
-window.toggleSubscriberStatus = function(email) {
+window.toggleSubscriberStatus = async function(email) {
     if (confirm('Deseja alterar o status deste inscrito?')) {
-        emailMarketing.toggleSubscriberStatus(email);
-        loadSubscribers();
-        loadStats();
+        if (emailMarketing && typeof emailMarketing.toggleSubscriberStatus === 'function') {
+            emailMarketing.toggleSubscriberStatus(email);
+        } else {
+            // Fallback: atualiza localStorage
+            const subscribers = JSON.parse(localStorage.getItem('blog_subscribers') || '[]');
+            const updated = subscribers.map(sub => {
+                if (sub.email === email.toLowerCase()) {
+                    return { ...sub, status: sub.status === 'active' ? 'inactive' : 'active' };
+                }
+                return sub;
+            });
+            localStorage.setItem('blog_subscribers', JSON.stringify(updated));
+        }
+        await loadSubscribers();
+        await loadStats();
         showNotification('Status atualizado!', 'success');
     }
 };
 
 // Remove inscrito
-window.removeSubscriber = function(email) {
+window.removeSubscriber = async function(email) {
     if (confirm(`Tem certeza que deseja remover ${email} da lista?`)) {
-        emailMarketing.removeSubscriber(email);
-        loadSubscribers();
-        loadStats();
+        if (emailMarketing && typeof emailMarketing.removeSubscriber === 'function') {
+            emailMarketing.removeSubscriber(email);
+        } else {
+            // Fallback: remove do localStorage
+            const subscribers = JSON.parse(localStorage.getItem('blog_subscribers') || '[]');
+            const updated = subscribers.filter(sub => sub.email !== email.toLowerCase());
+            localStorage.setItem('blog_subscribers', JSON.stringify(updated));
+        }
+        await loadSubscribers();
+        await loadStats();
         showNotification('Inscrito removido!', 'success');
     }
 };
 
 // Funções auxiliares
 function formatDate(dateString) {
+    if (!dateString) return 'N/A';
     const date = new Date(dateString);
     return date.toLocaleDateString('pt-BR', {
         day: '2-digit',
@@ -265,6 +330,29 @@ function formatDate(dateString) {
         hour: '2-digit',
         minute: '2-digit'
     });
+}
+
+// Exporta para CSV (fallback)
+function exportToCSV(subscribers) {
+    const headers = ['Email', 'Nome', 'Data de Inscrição', 'Fonte', 'Status'];
+    const rows = subscribers.map(sub => [
+        sub.email,
+        sub.name || 'N/A',
+        formatDate(sub.subscribed_at || sub.subscribedAt),
+        sub.source || 'newsletter',
+        sub.status || 'active'
+    ]);
+
+    const csv = [
+        headers.join(','),
+        ...rows.map(row => row.map(cell => `"${cell}"`).join(','))
+    ].join('\n');
+
+    const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+    const link = document.createElement('a');
+    link.href = URL.createObjectURL(blob);
+    link.download = `inscritos-${new Date().toISOString().split('T')[0]}.csv`;
+    link.click();
 }
 
 function showNotification(message, type = 'info') {
