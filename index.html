@@ -27,6 +27,7 @@
     
     <title>Kadson Pedro | Saúde, Bem-Estar & Empreendedorismo</title>
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/modern-blog.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -92,24 +93,53 @@
         </section>
 
         <section id="posts-container" class="container">
-            <h2>Blog</h2>
+            <div class="section-header">
+                <h2>Artigos em Destaque</h2>
+                <a href="blog.html">Ver todos <i class="fas fa-arrow-right"></i></a>
+            </div>
             <div class="posts-grid">
                 <article class="post">
                     <img src="assets/images/saude-mental.jpg" alt="Dicas de bem-estar para aumentar energia diária" class="post-image" loading="lazy">
                     <div class="post-content">
+                        <div class="post-tags">
+                            <a href="#" class="post-tag">Saúde & Bem-Estar</a>
+                        </div>
                         <h3>Dicas de Bem-Estar para Aumentar sua Energia Diária</h3>
-                        <p>Descubra estratégias para melhorar sua qualidade de vida.</p>
+                        <div class="post-meta">
+                            <span><i class="far fa-calendar"></i> 20 Dez 2024</span>
+                            <span><i class="far fa-user"></i> Kadson Pedro</span>
+                        </div>
+                        <p>Descubra estratégias práticas e eficazes para melhorar sua qualidade de vida e aumentar seus níveis de energia diariamente.</p>
                         <a href="post.html?post=saude-mental" class="read-more" rel="noopener">Leia mais</a>
                     </div>
                 </article>
                 <article class="post">
                     <img src="assets/images/produtividade.jpg" alt="Marketing multinível no mercado de bem-estar" class="post-image" loading="lazy">
                     <div class="post-content">
+                        <div class="post-tags">
+                            <a href="#" class="post-tag">Empreendedorismo</a>
+                        </div>
                         <h3>Marketing Multinível: Como Iniciar no Mercado de Bem-Estar</h3>
-                        <p>Um guia para novos empreendedores.</p>
+                        <div class="post-meta">
+                            <span><i class="far fa-calendar"></i> 15 Dez 2024</span>
+                            <span><i class="far fa-user"></i> Kadson Pedro</span>
+                        </div>
+                        <p>Um guia completo para novos empreendedores que desejam construir um negócio sólido no mercado de saúde e bem-estar.</p>
                         <a href="post.html?post=produtividade" class="read-more" rel="noopener">Leia mais</a>
                     </div>
                 </article>
+            </div>
+        </section>
+
+        <!-- Newsletter Section -->
+        <section class="newsletter-section container">
+            <div class="newsletter-content">
+                <h2>📬 Receba Conteúdo Exclusivo</h2>
+                <p>Inscreva-se e receba dicas semanais sobre saúde, bem-estar e empreendedorismo diretamente no seu e-mail.</p>
+                <form class="newsletter-form lead-capture-form" data-source="homepage">
+                    <input type="email" placeholder="Seu melhor e-mail" required>
+                    <button type="submit">Inscrever-se</button>
+                </form>
             </div>
         </section>
 
@@ -128,17 +158,53 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2025 Kadson Pedro. Inspirando vidas com saúde, bem-estar e educação.</p>
-            <div class="social-links">
-                <a href="https://www.instagram.com/kadson.pedro" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                <a href="https://www.linkedin.com/in/kadsonpedro" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                <a href="https://www.youtube.com/@kadsonpedro" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-                <a href="https://wa.me/92994314016" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Sobre</h3>
+                    <p style="color: rgba(255,255,255,0.8); margin-bottom: 1rem;">Kadson Pedro: Educador e Empreendedor dedicado a transformar vidas através da educação, saúde e bem-estar.</p>
+                    <div class="social-links" style="justify-content: flex-start; margin-top: 1.5rem;">
+                        <a href="https://www.instagram.com/kadson.pedro" aria-label="Instagram" style="color: rgba(255,255,255,0.8); font-size: 1.5rem; margin-right: 1rem;"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/in/kadsonpedro" aria-label="LinkedIn" style="color: rgba(255,255,255,0.8); font-size: 1.5rem; margin-right: 1rem;"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://www.youtube.com/@kadsonpedro" aria-label="YouTube" style="color: rgba(255,255,255,0.8); font-size: 1.5rem; margin-right: 1rem;"><i class="fab fa-youtube"></i></a>
+                        <a href="https://wa.me/92994314016" aria-label="WhatsApp" style="color: rgba(255,255,255,0.8); font-size: 1.5rem;"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Navegação</h3>
+                    <ul>
+                        <li><a href="index.html">Início</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="eventos.html">Eventos</a></li>
+                        <li><a href="sobre.html">Sobre</a></li>
+                        <li><a href="contato.html">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Categorias</h3>
+                    <ul>
+                        <li><a href="blog.html?categoria=saude">Saúde & Bem-Estar</a></li>
+                        <li><a href="blog.html?categoria=empreendedorismo">Empreendedorismo</a></li>
+                        <li><a href="blog.html?categoria=marketing">Marketing</a></li>
+                        <li><a href="blog.html?categoria=desenvolvimento">Desenvolvimento Pessoal</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contato</h3>
+                    <ul>
+                        <li><a href="mailto:kadson.pedro@gmail.com">kadson.pedro@gmail.com</a></li>
+                        <li><a href="https://wa.me/92994314016">WhatsApp</a></li>
+                        <li><a href="contato.html">Formulário de Contato</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Kadson Pedro. Inspirando vidas com saúde, bem-estar e educação.</p>
             </div>
         </div>
     </footer>
 
     <script src="assets/js/script.js"></script>
     <script src="assets/js/mobile-menu.js"></script>
+    <script src="assets/js/lead-capture.js"></script>
 </body>
 </html>
