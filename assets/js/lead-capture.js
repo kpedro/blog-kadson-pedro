@@ -1,12 +1,69 @@
-// Sistema de Captura de Leads
+// Sistema de Captura de Leads - Integrado com Email Marketing
 document.addEventListener('DOMContentLoaded', function() {
-    // Configuração do EmailJS para captura de leads
+    // Aguarda sistema de email marketing carregar
+    setTimeout(() => {
+        if (typeof emailMarketing !== 'undefined') {
+            setupIntegratedForms();
+        } else {
+            setupFallbackForms();
+        }
+    }, 500);
+});
+
+// Configura formulários integrados com sistema de email marketing
+function setupIntegratedForms() {
+    // Inicializa EmailJS
+    if (typeof emailjs !== 'undefined') {
+        emailjs.init({
+            publicKey: "639peYCntwvgbJXOH",
+            blockHeadless: false,
+            limitRate: {
+                throttle: 10000
+            }
+        });
+    }
+
+    // Processa formulários de newsletter
+    document.querySelectorAll('.newsletter-form, .lead-capture-form').forEach(form => {
+        // Remove listeners antigos
+        const newForm = form.cloneNode(true);
+        form.parentNode.replaceChild(newForm, form);
+        
+        newForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const emailInput = newForm.querySelector('input[type="email"]');
+            const nameInput = newForm.querySelector('input[name="name"], input[type="text"]');
+            const source = newForm.getAttribute('data-source') || window.location.pathname;
+            
+            if (!emailInput) return;
+            
+            const email = emailInput.value.trim();
+            const name = nameInput ? nameInput.value.trim() : '';
+            
+            // Usa sistema de email marketing
+            const result = emailMarketing.addSubscriber(email, name, source, {
+                page: window.location.pathname,
+                referrer: document.referrer
+            });
+            
+            if (result.success) {
+                showLeadFeedback(newForm, 'Obrigado! Você receberá conteúdo exclusivo em breve.', 'success');
+                newForm.reset();
+            } else {
+                showLeadFeedback(newForm, result.error, 'error');
+            }
+        });
+    });
+}
+
+// Fallback caso sistema de email marketing não esteja disponível
+function setupFallbackForms() {
     if (typeof emailjs === 'undefined') {
         console.warn('EmailJS não está carregado. Captura de leads pode não funcionar.');
         return;
     }
 
-    // Inicializa EmailJS
     emailjs.init({
         publicKey: "639peYCntwvgbJXOH",
         blockHeadless: false,
@@ -15,10 +72,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Processa formulários de captura de leads
-    const leadForms = document.querySelectorAll('.lead-capture-form');
-    
-    leadForms.forEach(form => {
+    document.querySelectorAll('.lead-capture-form').forEach(form => {
         form.addEventListener('submit', function(e) {
             e.preventDefault();
             
@@ -31,17 +85,14 @@ document.addEventListener('DOMContentLoaded', function() {
                 return;
             }
 
-            // Validação de email
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             if (!emailRegex.test(email)) {
                 showLeadFeedback(form, 'Email inválido. Tente novamente.', 'error');
                 return;
             }
 
-            // Salva no localStorage (backup)
             saveLeadToLocalStorage(email, name, source);
 
-            // Envia para EmailJS
             const templateParams = {
                 to_name: 'Kadson Pedro',
                 from_name: name,
@@ -52,26 +103,22 @@ document.addEventListener('DOMContentLoaded', function() {
 
             emailjs.send(
                 'service_sfcgswc',
-                'template_um5hyie', // Use um template específico para leads
+                'template_um5hyie',
                 templateParams,
                 '639peYCntwvgbJXOH'
             )
             .then(function(response) {
-                console.log('Lead capturado com sucesso!', response);
                 showLeadFeedback(form, 'Obrigado! Você receberá conteúdo exclusivo em breve.', 'success');
                 form.reset();
-                
-                // Tracking
                 trackLeadCapture(email, source);
             })
             .catch(function(error) {
-                console.error('Erro ao capturar lead:', error);
-                // Mesmo com erro, salva localmente
                 showLeadFeedback(form, 'Obrigado! Seus dados foram salvos.', 'success');
                 form.reset();
             });
         });
     });
+}
 
     // Função para mostrar feedback
     function showLeadFeedback(form, message, type) {
