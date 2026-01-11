@@ -37,7 +37,7 @@ body {
 
 /* Header Moderno */
 header {
-    background: var(--white);
+    background: var(--white) !important;
     box-shadow: var(--shadow-sm);
     position: sticky;
     top: 0;
@@ -49,10 +49,23 @@ header .container {
     padding: 1.25rem 2rem;
 }
 
-.logo a {
+header .logo a {
+    color: var(--primary-color) !important;
     font-size: 1.75rem;
     font-weight: 700;
     letter-spacing: -0.5px;
+}
+
+header nav ul li a {
+    color: var(--text-color) !important;
+}
+
+header nav ul li a:hover {
+    color: var(--accent-color) !important;
+}
+
+header .menu-toggle {
+    color: var(--text-color) !important;
 }
 
 /* Cards de Posts Modernos */

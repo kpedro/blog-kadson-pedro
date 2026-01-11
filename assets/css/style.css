@@ -36,6 +36,25 @@ header {
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
+/* Header branco quando modern-blog.css está ativo */
+body:has(.modern-header) header,
+header.modern-header {
+    background: #ffffff;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+header.modern-header .logo a {
+    color: var(--primary-color);
+}
+
+header.modern-header nav ul li a {
+    color: var(--text-color);
+}
+
+header.modern-header nav ul li a:hover {
+    color: var(--accent-color);
+}
+
 header .container {
     display: flex;
     align-items: center;
