@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciar Newsletter - Kadson Pedro</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/modern-blog.css">
+    <link rel="stylesheet" href="assets/css/admin-newsletter.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="admin-container">
+        <!-- Header -->
+        <header class="admin-header">
+            <div class="container">
+                <div class="admin-header-content">
+                    <h1><i class="fas fa-envelope-open-text"></i> Gerenciar Newsletter</h1>
+                    <a href="index.html" class="btn btn-secondary">
+                        <i class="fas fa-arrow-left"></i> Voltar ao Blog
+                    </a>
+                </div>
+            </div>
+        </header>
+
+        <!-- Dashboard -->
+        <div class="admin-main container">
+            <!-- Estatísticas -->
+            <section class="stats-section">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="fas fa-users"></i></div>
+                        <div class="stat-content">
+                            <h3 id="stat-total">0</h3>
+                            <p>Total de Inscritos</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon active"><i class="fas fa-check-circle"></i></div>
+                        <div class="stat-content">
+                            <h3 id="stat-active">0</h3>
+                            <p>Inscritos Ativos</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon today"><i class="fas fa-calendar-day"></i></div>
+                        <div class="stat-content">
+                            <h3 id="stat-today">0</h3>
+                            <p>Inscrições Hoje</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon campaigns"><i class="fas fa-paper-plane"></i></div>
+                        <div class="stat-content">
+                            <h3 id="stat-campaigns">0</h3>
+                            <p>Campanhas Enviadas</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Ações Rápidas -->
+            <section class="actions-section">
+                <h2>Ações Rápidas</h2>
+                <div class="actions-grid">
+                    <button class="action-btn" id="btn-new-campaign">
+                        <i class="fas fa-plus"></i>
+                        <span>Nova Campanha</span>
+                    </button>
+                    <button class="action-btn" id="btn-export">
+                        <i class="fas fa-download"></i>
+                        <span>Exportar Lista</span>
+                    </button>
+                    <button class="action-btn" id="btn-refresh">
+                        <i class="fas fa-sync"></i>
+                        <span>Atualizar</span>
+                    </button>
+                </div>
+            </section>
+
+            <!-- Lista de Inscritos -->
+            <section class="subscribers-section">
+                <div class="section-header">
+                    <h2>Inscritos</h2>
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="search-subscribers" placeholder="Buscar por email ou nome...">
+                    </div>
+                </div>
+                <div class="subscribers-table-wrapper">
+                    <table class="subscribers-table">
+                        <thead>
+                            <tr>
+                                <th>Email</th>
+                                <th>Nome</th>
+                                <th>Data de Inscrição</th>
+                                <th>Fonte</th>
+                                <th>Status</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody id="subscribers-tbody">
+                            <tr>
+                                <td colspan="6" class="empty-state">
+                                    <i class="fas fa-spinner fa-spin"></i> Carregando...
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Campanhas -->
+            <section class="campaigns-section">
+                <div class="section-header">
+                    <h2>Campanhas Enviadas</h2>
+                </div>
+                <div id="campaigns-list" class="campaigns-list">
+                    <div class="empty-state">
+                        <i class="fas fa-spinner fa-spin"></i> Carregando campanhas...
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Modal: Nova Campanha -->
+    <div id="campaign-modal" class="modal">
+        <div class="modal-content large">
+            <span class="modal-close">&times;</span>
+            <h2>Nova Campanha de Email</h2>
+            <form id="campaign-form">
+                <div class="form-group">
+                    <label for="campaign-subject">Assunto do Email</label>
+                    <input type="text" id="campaign-subject" class="form-control" required placeholder="Ex: Dicas de Bem-Estar desta Semana">
+                </div>
+                <div class="form-group">
+                    <label for="campaign-content">Conteúdo do Email</label>
+                    <textarea id="campaign-content" class="form-control" rows="10" required placeholder="Escreva o conteúdo do email aqui..."></textarea>
+                    <small>Dica: Use quebras de linha para melhor formatação</small>
+                </div>
+                <div class="form-group">
+                    <label>
+                        <input type="checkbox" id="campaign-preview" checked>
+                        Enviar email de teste primeiro
+                    </label>
+                </div>
+                <div class="modal-actions">
+                    <button type="button" class="btn btn-secondary" id="btn-cancel-campaign">Cancelar</button>
+                    <button type="button" class="btn btn-secondary" id="btn-preview-campaign">Preview</button>
+                    <button type="submit" class="btn btn-primary" id="btn-send-campaign">
+                        <i class="fas fa-paper-plane"></i> Enviar Campanha
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal: Preview Email -->
+    <div id="preview-modal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <h2>Preview do Email</h2>
+            <div class="email-preview">
+                <div class="email-header">
+                    <strong>De:</strong> Kadson Pedro &lt;kadson.pedro@gmail.com&gt;<br>
+                    <strong>Para:</strong> [Email do Inscrito]<br>
+                    <strong>Assunto:</strong> <span id="preview-subject"></span>
+                </div>
+                <div class="email-body" id="preview-content">
+                    <!-- Conteúdo será inserido aqui -->
+                </div>
+            </div>
+            <div class="modal-actions">
+                <button class="btn btn-secondary" id="btn-close-preview">Fechar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script src="assets/js/email-marketing.js"></script>
+    <script src="assets/js/admin-newsletter.js"></script>
+</body>
+</html>
