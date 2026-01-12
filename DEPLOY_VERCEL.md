@@ -24,11 +24,16 @@
 ### **3. Configurar Projeto**
 
 **Configurações:**
-- **Framework Preset**: `Other` ou `Static Site`
+- **Framework Preset**: `Other` ou `Static Site` ⭐ **RECOMENDADO**
 - **Root Directory**: `.` (raiz)
 - **Build Command**: Deixe vazio (site estático)
 - **Output Directory**: `.` (raiz)
-- **Install Command**: `npm install` (opcional, só se precisar)
+- **Install Command**: Deixe vazio (não precisa instalar nada)
+
+**⚠️ IMPORTANTE:** Este é um **site estático** (HTML/CSS/JS), não uma aplicação Node.js!
+- O `server.js` é apenas para desenvolvimento local
+- Em produção, Vercel serve os arquivos estáticos diretamente
+- Não precisa de build ou instalação de dependências
 
 ### **4. Variáveis de Ambiente (Opcional)**
 
