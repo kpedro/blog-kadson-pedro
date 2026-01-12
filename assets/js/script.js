@@ -69,18 +69,26 @@ document.addEventListener("DOMContentLoaded", function () {
                     if (!imagePath.startsWith('/')) {
                         imagePath = '/' + imagePath;
                     }
-                    imageUrl = window.location.origin + imagePath;
+                    // Garante URL absoluta para preview de compartilhamento
+                    const baseUrl = 'https://kadsonpedro.com.br';
+                    imageUrl = baseUrl + imagePath;
                 } else {
                     // Imagem padrão se não houver imagem no post
-                    imageUrl = window.location.origin + '/assets/images/logo-blog.png';
+                    imageUrl = 'https://kadsonpedro.com.br/assets/images/logo-blog.png';
                 }
                 
-                // Atualiza todas as meta tags de imagem
+                // Atualiza todas as meta tags de imagem (URLs absolutas são essenciais!)
                 const ogImage = document.getElementById('og-image');
                 const twitterImage = document.getElementById('twitter-image');
                 
                 if (ogImage) ogImage.content = imageUrl;
                 if (twitterImage) twitterImage.content = imageUrl;
+                
+                // Adiciona dimensões da imagem para melhor preview
+                const ogImageWidth = document.querySelector('meta[property="og:image:width"]');
+                const ogImageHeight = document.querySelector('meta[property="og:image:height"]');
+                if (ogImageWidth) ogImageWidth.content = '1200';
+                if (ogImageHeight) ogImageHeight.content = '630';
 
                 if (titleMatch && postTitle) {
                     const fullTitle = titleMatch[1];
