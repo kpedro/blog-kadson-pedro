@@ -784,30 +784,31 @@ footer {
 }
 
 .about-section h2 {
-    color: var(--primary-color);
-    font-size: 1.75rem;
-    font-weight: 600;
-    margin: var(--spacing-lg) 0 var(--spacing-sm);
-    letter-spacing: -0.3px;
+    color: var(--primary-color) !important;
+    font-size: 1.75rem !important;
+    font-weight: 600 !important;
+    margin: var(--spacing-lg) 0 var(--spacing-sm) !important;
+    letter-spacing: -0.3px !important;
 }
 
 .about-section p {
-    color: var(--text-color);
-    line-height: 1.8;
-    margin-bottom: var(--spacing-md);
-    font-size: 1.0625rem;
+    color: var(--text-color) !important;
+    line-height: 1.8 !important;
+    margin-bottom: var(--spacing-md) !important;
+    font-size: 1.0625rem !important;
 }
 
 .about-section ul {
-    margin: var(--spacing-md) 0 var(--spacing-md) 2rem;
-    padding: 0;
+    margin: var(--spacing-md) 0 var(--spacing-md) 2rem !important;
+    padding: 0 !important;
+    list-style-type: disc !important;
 }
 
 .about-section li {
-    color: var(--text-color);
-    line-height: 1.8;
-    margin-bottom: 0.75rem;
-    font-size: 1.0625rem;
+    color: var(--text-color) !important;
+    line-height: 1.8 !important;
+    margin-bottom: 0.75rem !important;
+    font-size: 1.0625rem !important;
 }
 
 /* Estilos para Eventos */
