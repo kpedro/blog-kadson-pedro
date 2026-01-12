@@ -835,6 +835,54 @@ footer {
     grid-template-columns: 1fr 1fr;
     gap: var(--spacing-xl);
     margin: var(--spacing-xl) 0;
+    background: transparent !important; /* Remove fundo branco do style.css */
+    padding: 0 !important; /* Remove padding do style.css */
+    box-shadow: none !important; /* Remove sombra do style.css */
+}
+
+/* Override do style.css para contact-info */
+.contact-info {
+    background: var(--primary-color) !important; /* Fundo escuro */
+    padding: var(--spacing-lg) !important;
+    border-radius: var(--border-radius-lg) !important;
+    color: var(--white) !important;
+}
+
+/* Hero section na página de contato */
+section.hero {
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%) !important;
+    padding: var(--spacing-xl) 0 !important;
+    text-align: center;
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 0;
+}
+
+section.hero h1 {
+    color: var(--primary-color) !important;
+    font-size: 2.5rem !important;
+    font-weight: 700 !important;
+    margin-bottom: var(--spacing-sm) !important;
+}
+
+section.hero p {
+    color: var(--text-color) !important;
+    font-size: 1.25rem !important;
+    margin-bottom: var(--spacing-sm) !important;
+}
+
+section.hero ul {
+    list-style: none;
+    padding: 0;
+    margin: var(--spacing-md) 0;
+    display: inline-block;
+    text-align: left;
+}
+
+section.hero ul li {
+    color: var(--text-color) !important;
+    line-height: 1.8;
+    margin-bottom: 0.5rem;
+    font-size: 1.0625rem;
 }
 
 @media (max-width: 768px) {
@@ -843,10 +891,19 @@ footer {
     }
 }
 
+/* Contact Info - Coluna Esquerda */
+.contact-info {
+    background: var(--primary-color) !important; /* Fundo escuro */
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius-lg);
+    color: var(--white);
+}
+
 .contact-info h2 {
-    color: var(--primary-color);
+    color: var(--white) !important; /* Branco sobre fundo escuro - contraste excelente */
     font-size: 1.75rem;
     margin-bottom: var(--spacing-md);
+    font-weight: 700;
 }
 
 .contact-item {
@@ -857,25 +914,27 @@ footer {
 }
 
 .contact-item i {
-    color: var(--accent-color);
+    color: var(--accent-color) !important; /* Azul brilhante - contraste bom sobre escuro */
     font-size: 1.5rem;
     margin-top: 0.25rem;
 }
 
 .contact-item p {
-    color: var(--text-color);
+    color: rgba(255, 255, 255, 0.95) !important; /* Branco com 95% opacidade - excelente contraste */
     line-height: 1.8;
     margin: 0;
+    font-size: 1rem;
 }
 
 .contact-item a {
-    color: var(--accent-color);
+    color: var(--accent-color) !important; /* Azul brilhante - contraste bom */
     text-decoration: none;
     font-weight: 600;
+    transition: var(--transition);
 }
 
 .contact-item a:hover {
-    color: var(--accent-hover);
+    color: rgba(0, 102, 204, 0.8) !important; /* Azul mais claro no hover */
     text-decoration: underline;
 }
 
@@ -910,6 +969,21 @@ footer {
     color: var(--text-color);
     background: var(--white);
     transition: var(--transition);
+}
+
+/* Placeholders com melhor contraste para leitura */
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: var(--text-light) !important; /* #4a4a4a - contraste 8.2:1 (WCAG AA) */
+    opacity: 1 !important; /* Garante que a cor seja aplicada */
+}
+
+.form-group select option:first-child {
+    color: var(--text-light) !important; /* Placeholder do select */
+}
+
+.form-group select:invalid {
+    color: var(--text-light) !important;
 }
 
 .form-group input:focus,
