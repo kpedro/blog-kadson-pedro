@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Programas e Mentorias - Kadson Pedro</title>
+    <meta name="description" content="Conheça os produtos e serviços oferecidos por Kadson Pedro.">
+    <title>Produtos - Kadson Pedro</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/modern-blog.css">
     <link rel="stylesheet" href="assets/css/amway-inspired.css">
@@ -13,16 +14,20 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
+    <a href="#main-content" class="skip-to-content">Pular para o conteúdo principal</a>
     <header>
         <div class="container">
             <div class="logo">
-                <a href="index.html">Kadson Pedro</a>
+                <a href="index.html" aria-label="Kadson Pedro - Página inicial">Kadson Pedro</a>
             </div>
+            <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
             <nav aria-label="Menu principal">
                 <ul>
                     <li><a href="index.html">Início</a></li>
-                    <li><a href="mentorias.html">Mentorias</a></li>
-                    <li><a href="cursos.html">Cursos</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="eventos.html">Eventos</a></li>
                     <li><a href="sobre.html">Sobre</a></li>
                     <li><a href="contato.html">Contato</a></li>
                 </ul>
@@ -30,73 +35,49 @@
         </div>
     </header>
 
-    <main>
+    <main id="main-content">
         <section id="home">
             <div class="container">
-                <h1>Programas e Mentorias</h1>
-                <p>Descubra como transformar sua vida e seu negócio através de programas exclusivos</p>
+                <h1>Produtos e Serviços</h1>
+                <p>Descubra como podemos ajudar você a crescer e realizar seus objetivos.</p>
             </div>
         </section>
 
         <section class="container">
             <div class="posts-grid">
-                <!-- Mentoria 1 -->
                 <article class="post">
-                    <img src="assets/images/mentoria-marketing.jpg" alt="Mentoria em Marketing de Relacionamento" class="post-image">
+                    <img src="https://i.postimg.cc/Tw0xzB3R/AMWAY-Nutrilite-Daily-1-PDP-Portugues-480x480px-Bem-Estar.png" alt="Daily+ Bem-Estar D45" class="post-image" loading="lazy">
                     <div class="post-content">
-                        <h3>Mentoria em Marketing de Relacionamento</h3>
-                        <p>Aprenda estratégias avançadas para construir uma rede sólida e escalável.</p>
-                        <ul class="program-features">
-                            <li><i class="fas fa-check"></i> 8 semanas de acompanhamento</li>
-                            <li><i class="fas fa-check"></i> Encontros semanais ao vivo</li>
-                            <li><i class="fas fa-check"></i> Material exclusivo</li>
-                        </ul>
-                        <a href="mentoria.html?id=marketing" class="read-more">Saiba Mais</a>
+                        <h3>Daily+ Bem-Estar D45</h3>
+                        <p>Inclui: Nutrilite™ Daily Plus e Ômega 3 Plus. Ideal para fortalecer o sistema imunológico e a saúde cardiovascular.</p>
+                        <a href="https://www.amway.com.br/pt/Daily%2B1-BEM-ESTAR-D45/p/326994/60338539204" class="read-more" target="_blank" rel="noopener">Saiba mais</a>
                     </div>
                 </article>
 
-                <!-- Programa 2 -->
                 <article class="post">
-                    <img src="assets/images/programa-saude.jpg" alt="Programa de Saúde Integral" class="post-image">
+                    <img src="https://i.postimg.cc/C5K0SJRb/AMWAY-Nutrilite-Daily-1-PDP-Portugues-480x480px-Imunidade.png" alt="Daily+ Imunidade D45" class="post-image" loading="lazy">
                     <div class="post-content">
-                        <h3>Programa de Saúde Integral</h3>
-                        <p>Desenvolva hábitos saudáveis enquanto constrói seu negócio.</p>
-                        <ul class="program-features">
-                            <li><i class="fas fa-check"></i> 12 semanas de programa</li>
-                            <li><i class="fas fa-check"></i> Planos personalizados</li>
-                            <li><i class="fas fa-check"></i> Suporte contínuo</li>
-                        </ul>
-                        <a href="programa.html?id=saude" class="read-more">Saiba Mais</a>
+                        <h3>Daily+ Imunidade D45</h3>
+                        <p>Inclui: Nutrilite™ Daily Plus e Acerola C Mastigável. Perfeito para reforçar o sistema imunológico.</p>
+                        <a href="https://www.amway.com.br/pt/Daily-%2B1-IMUNIDADE-D45/p/326995/60338539204" class="read-more" target="_blank" rel="noopener">Saiba mais</a>
                     </div>
                 </article>
 
-                <!-- Curso 3 -->
                 <article class="post">
-                    <img src="assets/images/curso-lideranca.jpg" alt="Curso de Liderança" class="post-image">
+                    <img src="https://i.postimg.cc/kMj9frHs/AMWAY-Nutrilite-Daily-1-PDP-Portugues-480x480px-Beleza.png" alt="Daily+ Beleza D45" class="post-image" loading="lazy">
                     <div class="post-content">
-                        <h3>Liderança e Gestão de Equipes</h3>
-                        <p>Desenvolva habilidades essenciais para liderar equipes de alto desempenho.</p>
-                        <ul class="program-features">
-                            <li><i class="fas fa-check"></i> Curso online completo</li>
-                            <li><i class="fas fa-check"></i> Certificado incluso</li>
-                            <li><i class="fas fa-check"></i> Acesso vitalício</li>
-                        </ul>
-                        <a href="curso.html?id=lideranca" class="read-more">Saiba Mais</a>
+                        <h3>Daily+ Beleza D45</h3>
+                        <p>Inclui: Nutrilite™ Daily Plus e Vitamina E. Para promover uma pele saudável e radiante.</p>
+                        <a href="https://www.amway.com.br/pt/Daily%2B1-BELEZA-D45/p/326996/60338539204" class="read-more" target="_blank" rel="noopener">Saiba mais</a>
                     </div>
                 </article>
 
-                <!-- Mentoria 4 -->
                 <article class="post">
-                    <img src="assets/images/mentoria-negocios.jpg" alt="Mentoria de Negócios" class="post-image">
+                    <img src="https://i.postimg.cc/9X1XKwDG/AMWAY-Nutrilite-Daily-1-PDP-Portugues-480x480px-Brilho.png" alt="Daily+ Brilho D45" class="post-image" loading="lazy">
                     <div class="post-content">
-                        <h3>Mentoria de Negócios</h3>
-                        <p>Acelere seus resultados com estratégias comprovadas de crescimento.</p>
-                        <ul class="program-features">
-                            <li><i class="fas fa-check"></i> Mentoria personalizada</li>
-                            <li><i class="fas fa-check"></i> Planejamento estratégico</li>
-                            <li><i class="fas fa-check"></i> Consultoria individual</li>
-                        </ul>
-                        <a href="mentoria.html?id=negocios" class="read-more">Saiba Mais</a>
+                        <h3>Daily+ Brilho D45</h3>
+                        <p>Inclui: Nutrilite™ Daily Plus e Artistry Sérum Vitamina C + HA3. Realce sua pele com brilho e vitalidade.</p>
+                        <a href="https://www.amway.com.br/pt/Daily-%2B-1-Brilho-D45/p/323874/60338539204" class="read-more" target="_blank" rel="noopener">Saiba mais</a>
                     </div>
                 </article>
             </div>
@@ -105,87 +86,17 @@
 
     <footer>
         <div class="container">
-            <p>© 2024 Kadson Pedro. Todos os direitos reservados.</p>
+            <p>&copy; 2025 Kadson Pedro. Inspirando vidas com saúde, bem-estar e educação.</p>
             <div class="social-links">
-                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-                <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://www.instagram.com/kadson.pedro" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/in/kadsonpedro" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.youtube.com/@kadsonpedro" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                <a href="https://wa.me/92994314016" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
             </div>
         </div>
     </footer>
 
     <script src="assets/js/script.js"></script>
-=======
-    <meta name="description" content="Conheça os produtos e serviços oferecidos por Kadson Pedro.">
-    <title>Produtos - Kadson Pedro</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <!-- Cabeçalho -->
-    <header class="header">
-        <div class="container logo-container">
-            <img src="https://i.postimg.cc/2yjbKC3z/logo-blog-kadson-pedro.png" alt="Logotipo Kadson Pedro" class="logo">
-            <h1>Produtos e Serviços</h1>
-            <p>Descubra como podemos ajudar você a crescer e realizar seus objetivos.</p>
-        </div>
-        <nav class="navbar">
-            <ul class="nav-links">
-                <li><a href="index.html">Início</a></li>
-                <li><a href="sobre.html">Sobre</a></li>
-                <li><a href="produtos.html" class="active">Produtos</a></li>
-                <li><a href="contato.html">Contato</a></li>
-                <li><a href="politica.html">Política de Privacidade</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <!-- Conteúdo principal -->
-    <main class="products-section">
-        <div class="container">
-            <h2>Nossos Produtos e Serviços</h2>
-            <div class="product-grid">
-                <!-- Produto 1 -->
-                <div class="product-card">
-                    <img src="https://i.postimg.cc/Tw0xzB3R/AMWAY-Nutrilite-Daily-1-PDP-Portugues-480x480px-Bem-Estar.png" alt="Imagem do Produto 1">
-                    <h3>Daily+ Bem-Estar D45</h3>
-                    <p>Inclui: Nutrilite™ Daily Plus e Ômega 3 Plus. Ideal para fortalecer o sistema imunológico e a saúde cardiovascular.</p>
-                    <a href="https://www.amway.com.br/pt/Daily%2B1-BEM-ESTAR-D45/p/326994/60338539204" class="btn">Saiba mais</a>
-                </div>
-
-                <!-- Produto 2 -->
-                <div class="product-card">
-                    <img src="https://i.postimg.cc/C5K0SJRb/AMWAY-Nutrilite-Daily-1-PDP-Portugues-480x480px-Imunidade.png" alt="Imagem do Produto 2">
-                    <h3>Daily+ Imunidade D45</h3>
-                    <p>Inclui: Nutrilite™ Daily Plus e Acerola C Mastigável. Perfeito para reforçar o sistema imunológico</p>
-                    <a href="https://www.amway.com.br/pt/Daily-%2B1-IMUNIDADE-D45/p/326995/60338539204" class="btn">Saiba mais</a>
-                </div>
-
-                <!-- Produto 3 -->
-                <div class="product-card">
-                    <img src="https://i.postimg.cc/kMj9frHs/AMWAY-Nutrilite-Daily-1-PDP-Portugues-480x480px-Beleza.png" alt="Imagem do Produto 3">
-                    <h3>Daily+ Beleza D45</h3>
-                    <p>Inclui: Nutrilite™ Daily Plus e Vitamina E. Para promover uma pele saudável e radiante.</p>
-                    <a href="https://www.amway.com.br/pt/Daily%2B1-BELEZA-D45/p/326996/60338539204" class="btn">Saiba mais</a>
-                </div>
-
-                <!-- Produto 4 -->
-                <div class="product-card">
-                    <img src="https://i.postimg.cc/9X1XKwDG/AMWAY-Nutrilite-Daily-1-PDP-Portugues-480x480px-Brilho.png" alt="Imagem do Produto 4">
-                    <h3>Daily+ Brilho D45</h3>
-                    <p>Inclui: Nutrilite™ Daily Plus e Artistry Sérum Vitamina C + HA3. Realce sua pele com brilho e vitalidade.</p>
-                    <a href="https://www.amway.com.br/pt/Daily-%2B-1-Brilho-D45/p/323874/60338539204" class="btn">Saiba mais</a>
-                </div>
-            </div>
-        </div>
-    </main>
-
-    <!-- Rodapé -->
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2025 Blog Kadson Pedro | Kadson Pedro. Todos os direitos reservados.</p>
-        </div>
-    </footer>
->>>>>>> b717b03e2297934797b9839f8752763d1100e9d9
+    <script src="assets/js/mobile-menu.js"></script>
 </body>
 </html>
