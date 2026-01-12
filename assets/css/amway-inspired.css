@@ -3,18 +3,19 @@
    Design Limpo, Moderno e Profissional
    ============================================ */
 
-/* Variáveis de Cores Profissionais */
+/* Variáveis de Cores Profissionais - Otimizadas para Leitura */
 :root {
     --primary-color: #1a1a1a;
     --secondary-color: #2d2d2d;
     --accent-color: #0066cc;
     --accent-hover: #0052a3;
-    --text-color: #333333;
-    --text-light: #666666;
-    --text-lighter: #999999;
+    --text-color: #1a1a1a; /* Mais escuro para melhor contraste (WCAG AAA) */
+    --text-light: #4a4a4a; /* Mais legível que #666 */
+    --text-lighter: #6b6b6b; /* Mais legível que #999 */
     --bg-color: #ffffff;
     --bg-light: #f8f9fa;
     --bg-section: #fafafa;
+    --bg-reading: #ffffff; /* Fundo branco puro para leitura */
     --white: #ffffff;
     --border-color: #e5e5e5;
     --shadow-xs: 0 1px 3px rgba(0,0,0,0.05);
@@ -40,9 +41,33 @@ body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
     color: var(--text-color);
     background-color: var(--bg-color);
-    line-height: 1.6;
+    line-height: 1.7; /* Aumentado para melhor legibilidade */
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+}
+
+/* Otimização para Leitura */
+article,
+.post-content p,
+.about-section p,
+.contact-wrapper p {
+    color: var(--text-color);
+    line-height: 1.8; /* Ainda mais espaçado para leitura */
+    max-width: 65ch; /* Largura ideal para leitura (65 caracteres) */
+    margin: 0 auto 1.5rem;
+}
+
+/* Contraste melhorado para textos longos */
+p, li, span {
+    color: var(--text-color);
+}
+
+/* Headings com melhor contraste */
+h1, h2, h3, h4, h5, h6 {
+    color: var(--primary-color);
+    font-weight: 700;
+    line-height: 1.3;
+    letter-spacing: -0.3px;
 }
 
 /* Container Melhorado */
@@ -373,10 +398,105 @@ a.read-more:hover {
 
 /* Descrição do Post */
 .post-content p {
-    color: var(--text-light);
-    line-height: 1.7;
+    color: var(--text-color); /* Mais escuro para melhor legibilidade */
+    line-height: 1.8; /* Aumentado para leitura confortável */
     margin: var(--spacing-sm) 0 var(--spacing-md) 0;
     flex: 1;
+    font-size: 1rem; /* Tamanho adequado para leitura */
+}
+
+/* Conteúdo de Artigos - Otimizado para Leitura */
+article.post-content,
+#post-content,
+.post-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: var(--spacing-lg);
+    background: var(--bg-reading);
+    color: var(--text-color);
+    line-height: 1.8;
+    font-size: 1.0625rem; /* 17px - tamanho ideal para leitura */
+}
+
+article.post-content p,
+#post-content p {
+    color: var(--text-color);
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    max-width: 65ch; /* Largura ideal para leitura */
+}
+
+article.post-content h1,
+article.post-content h2,
+article.post-content h3 {
+    color: var(--primary-color);
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    line-height: 1.3;
+}
+
+article.post-content h2 {
+    font-size: 1.875rem; /* 30px */
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 0.5rem;
+}
+
+article.post-content h3 {
+    font-size: 1.5rem; /* 24px */
+}
+
+article.post-content ul,
+article.post-content ol {
+    margin: 1.5rem 0;
+    padding-left: 2rem;
+    line-height: 1.8;
+}
+
+article.post-content li {
+    margin-bottom: 0.75rem;
+    color: var(--text-color);
+}
+
+article.post-content a {
+    color: var(--accent-color);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+article.post-content a:hover {
+    color: var(--accent-hover);
+    text-decoration: none;
+}
+
+article.post-content blockquote {
+    border-left: 4px solid var(--accent-color);
+    padding-left: 1.5rem;
+    margin: 1.5rem 0;
+    font-style: italic;
+    color: var(--text-light);
+}
+
+article.post-content code {
+    background: var(--bg-light);
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    font-size: 0.9em;
+    color: var(--accent-color);
+}
+
+article.post-content pre {
+    background: var(--bg-light);
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    overflow-x: auto;
+    margin: 1.5rem 0;
+}
+
+article.post-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: var(--border-radius);
+    margin: 2rem 0;
 }
 
 /* Link Leia Mais */
@@ -604,4 +724,266 @@ footer {
         flex-direction: column;
         gap: var(--spacing-sm);
     }
+}
+
+/* Estilos para Seção Sobre */
+.about-section {
+    background: var(--white);
+    padding: var(--spacing-xl);
+    border-radius: var(--border-radius-lg);
+    margin: var(--spacing-xl) 0;
+    box-shadow: var(--shadow-sm);
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.about-section h1 {
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: var(--spacing-md);
+    letter-spacing: -0.5px;
+}
+
+.about-section h2 {
+    color: var(--primary-color);
+    font-size: 1.75rem;
+    font-weight: 600;
+    margin: var(--spacing-lg) 0 var(--spacing-sm);
+    letter-spacing: -0.3px;
+}
+
+.about-section p {
+    color: var(--text-color);
+    line-height: 1.8;
+    margin-bottom: var(--spacing-md);
+    font-size: 1.0625rem;
+}
+
+.about-section ul {
+    margin: var(--spacing-md) 0 var(--spacing-md) 2rem;
+    padding: 0;
+}
+
+.about-section li {
+    color: var(--text-color);
+    line-height: 1.8;
+    margin-bottom: 0.75rem;
+    font-size: 1.0625rem;
+}
+
+/* Estilos para Eventos */
+.events-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-lg);
+}
+
+.event-card {
+    background: var(--white);
+    border-radius: var(--border-radius-lg);
+    padding: var(--spacing-md);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border-color);
+    transition: var(--transition);
+}
+
+.event-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--accent-color);
+}
+
+.event-card h3 {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: var(--spacing-sm);
+    line-height: 1.3;
+}
+
+.event-card p {
+    color: var(--text-color);
+    line-height: 1.8;
+    margin-bottom: var(--spacing-sm);
+}
+
+.event-card a {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background: var(--accent-color);
+    color: var(--white);
+    text-decoration: none;
+    border-radius: var(--border-radius);
+    font-weight: 600;
+    transition: var(--transition);
+    margin-top: var(--spacing-sm);
+}
+
+.event-card a:hover {
+    background: var(--accent-hover);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+/* Estilos para Contato */
+.contact-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-xl);
+    margin: var(--spacing-xl) 0;
+}
+
+@media (max-width: 768px) {
+    .contact-wrapper {
+        grid-template-columns: 1fr;
+    }
+}
+
+.contact-info h2 {
+    color: var(--primary-color);
+    font-size: 1.75rem;
+    margin-bottom: var(--spacing-md);
+}
+
+.contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-md);
+}
+
+.contact-item i {
+    color: var(--accent-color);
+    font-size: 1.5rem;
+    margin-top: 0.25rem;
+}
+
+.contact-item p {
+    color: var(--text-color);
+    line-height: 1.8;
+    margin: 0;
+}
+
+.contact-item a {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.contact-item a:hover {
+    color: var(--accent-hover);
+    text-decoration: underline;
+}
+
+.contact-form {
+    background: var(--white);
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-sm);
+}
+
+.form-group {
+    margin-bottom: var(--spacing-md);
+}
+
+.form-group label {
+    display: block;
+    color: var(--text-color);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 0.875rem 1.25rem;
+    border: 2px solid var(--border-color);
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    font-family: inherit;
+    color: var(--text-color);
+    background: var(--white);
+    transition: var(--transition);
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.1);
+}
+
+.submit-button {
+    padding: 0.875rem 2rem;
+    background: var(--accent-color);
+    color: var(--white);
+    border: none;
+    border-radius: var(--border-radius);
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: var(--transition);
+    width: 100%;
+}
+
+.submit-button:hover {
+    background: var(--accent-hover);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.contact-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-md);
+    margin: var(--spacing-xl) 0;
+}
+
+.contact-card {
+    background: var(--white);
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border-color);
+    transition: var(--transition);
+}
+
+.contact-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+}
+
+.contact-card h3 {
+    color: var(--primary-color);
+    font-size: 1.25rem;
+    margin-bottom: var(--spacing-sm);
+}
+
+.contact-card p {
+    color: var(--text-light);
+    line-height: 1.7;
+    margin-bottom: var(--spacing-md);
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background: var(--accent-color);
+    color: var(--white);
+    text-decoration: none;
+    border-radius: var(--border-radius);
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.cta-button:hover {
+    background: var(--accent-hover);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
 }
