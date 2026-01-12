@@ -12,8 +12,8 @@
     
     if (!postId) return;
     
-    // Base URL - ajuste conforme seu domínio
-    const baseUrl = 'https://kadsonpedro.com.br';
+    // Base URL - usa o domínio atual dinamicamente
+    const baseUrl = window.location.origin;
     const currentUrl = window.location.href;
     
     // Metadata dos posts - sincronizado com posts/index.json

@@ -70,11 +70,11 @@ document.addEventListener("DOMContentLoaded", function () {
                         imagePath = '/' + imagePath;
                     }
                     // Garante URL absoluta para preview de compartilhamento
-                    const baseUrl = 'https://kadsonpedro.com.br';
+                    const baseUrl = window.location.origin;
                     imageUrl = baseUrl + imagePath;
                 } else {
                     // Imagem padrão se não houver imagem no post
-                    imageUrl = 'https://kadsonpedro.com.br/assets/images/logo-blog.png';
+                    imageUrl = window.location.origin + '/assets/images/logo-blog.png';
                 }
                 
                 // Atualiza todas as meta tags de imagem (URLs absolutas são essenciais!)

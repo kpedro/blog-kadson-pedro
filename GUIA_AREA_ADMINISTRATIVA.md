@@ -23,8 +23,9 @@ A área administrativa do blog está **protegida por senha** e **não é visíve
 
 ### **1. Acesse a Página de Login:**
 ```
-https://kadsonpedro.com.br/admin.html
+/admin.html
 ```
+Ou use o domínio onde o blog está hospedado (ex: `https://seu-dominio.com/admin.html`)
 
 ### **2. Digite a Senha:**
 - **Senha padrão:** `admin2025`

@@ -51,7 +51,7 @@ As imagens dos artigos agora aparecem corretamente nas prévias de compartilhame
 
 4. **Gerador de Meta Tags** (`post-meta-generator.js`)
    - Já estava configurado com imagens corretas para posts conhecidos
-   - Usa URLs absolutas (`https://kadsonpedro.com.br/...`)
+   - Usa URLs absolutas dinâmicas (`window.location.origin + '/...'`)
 
 ---
 
@@ -93,7 +93,7 @@ Se você já compartilhou o link antes, eles podem estar usando a versão antiga
 ### **Como Forçar Atualização:**
 
 1. **Facebook Debugger**: https://developers.facebook.com/tools/debug/
-   - Cole a URL: `https://kadsonpedro.com.br/post.html?post=saude-mental`
+   - Cole a URL do seu domínio: `https://seu-dominio.com/post.html?post=saude-mental`
    - Clique em "Scrape Again"
    - Isso força o Facebook a re-scrapear a página
 
