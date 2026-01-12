@@ -674,6 +674,31 @@ footer {
     font-size: 0.875rem;
 }
 
+/* Rodapé simples (páginas que não têm footer-content) */
+footer p {
+    color: rgba(255, 255, 255, 0.85) !important;
+    margin-bottom: 1rem;
+}
+
+footer .social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+footer .social-links a {
+    color: rgba(255, 255, 255, 0.85) !important;
+    font-size: 1.5rem;
+    transition: var(--transition);
+    text-decoration: none;
+}
+
+footer .social-links a:hover {
+    color: var(--white) !important;
+    transform: translateY(-2px);
+}
+
 /* Responsividade Mobile */
 @media (max-width: 768px) {
     header .container {
