@@ -2,7 +2,8 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: /sitemap.xml
+# Sitemap - Atualize com seu domínio real
+# Sitemap: https://seu-dominio.com/sitemap.xml
 
 # Bloquear arquivos desnecessários
 Disallow: /node_modules/

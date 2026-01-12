@@ -44,11 +44,19 @@
     if (schemaScript) {
         try {
             const schema = JSON.parse(schemaScript.textContent);
-            if (schema.url && schema.url.startsWith('/')) {
-                schema.url = origin + schema.url;
+            if (schema.url) {
+                if (schema.url.startsWith('/')) {
+                    schema.url = origin + schema.url;
+                } else if (!schema.url.startsWith('http')) {
+                    schema.url = origin + '/' + schema.url;
+                }
             }
-            if (schema.author && schema.author.url && schema.author.url.startsWith('/')) {
-                schema.author.url = origin + schema.author.url;
+            if (schema.author && schema.author.url) {
+                if (schema.author.url.startsWith('/')) {
+                    schema.author.url = origin + schema.author.url;
+                } else if (!schema.author.url.startsWith('http')) {
+                    schema.author.url = origin + '/' + schema.author.url;
+                }
             }
             schemaScript.textContent = JSON.stringify(schema);
         } catch (e) {
