@@ -134,71 +134,84 @@ header nav ul li a[style*="light-color"] {
     font-weight: 600;
 }
 
-/* Hero Section Moderna */
+/* Hero Section Moderna - Override completo */
 #home {
-    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
-    padding: var(--spacing-xl) 0;
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%) !important;
+    padding: var(--spacing-xl) 0 !important;
     text-align: center;
     border-bottom: 1px solid var(--border-color);
+    margin-bottom: 0;
+    color: var(--text-color) !important;
+}
+
+#home::before {
+    display: none !important;
 }
 
 #home .container {
     max-width: 800px;
+    position: relative;
+    z-index: 1;
 }
 
 #home h1 {
-    font-size: 3.5rem;
-    font-weight: 700;
-    color: var(--primary-color);
-    margin-bottom: var(--spacing-sm);
+    font-size: 3.5rem !important;
+    font-weight: 700 !important;
+    color: var(--primary-color) !important;
+    margin-bottom: var(--spacing-sm) !important;
     letter-spacing: -1px;
     line-height: 1.1;
 }
 
 @media (max-width: 768px) {
     #home h1 {
-        font-size: 2.5rem;
+        font-size: 2.5rem !important;
     }
 }
 
 #home p {
-    font-size: 1.25rem;
-    color: var(--text-light);
-    margin-bottom: var(--spacing-xs);
-    font-weight: 400;
+    font-size: 1.25rem !important;
+    color: var(--text-light) !important;
+    margin-bottom: var(--spacing-xs) !important;
+    font-weight: 400 !important;
 }
 
 #home .subtitle {
-    font-size: 1.1rem;
-    color: var(--text-lighter);
-    margin-bottom: var(--spacing-lg);
-    font-weight: 300;
+    font-size: 1.1rem !important;
+    color: var(--text-lighter) !important;
+    margin-bottom: var(--spacing-lg) !important;
+    font-weight: 300 !important;
 }
 
-/* Botões Modernos */
+/* Botões Modernos - Override completo */
 .read-more,
 a.read-more {
-    display: inline-block;
-    padding: 0.875rem 2rem;
-    background: var(--accent-color);
+    display: inline-block !important;
+    padding: 0.875rem 2rem !important;
+    background: var(--accent-color) !important;
     color: var(--white) !important;
-    text-decoration: none;
-    border-radius: var(--border-radius);
-    font-weight: 600;
-    font-size: 0.95rem;
-    transition: var(--transition);
-    border: none;
+    text-decoration: none !important;
+    border-radius: var(--border-radius) !important;
+    font-weight: 600 !important;
+    font-size: 0.95rem !important;
+    transition: var(--transition) !important;
+    border: none !important;
     cursor: pointer;
-    margin: 0.5rem;
+    margin: 0.5rem !important;
     letter-spacing: 0.3px;
 }
 
 .read-more:hover,
 a.read-more:hover {
-    background: var(--accent-hover);
+    background: var(--accent-hover) !important;
     transform: translateY(-2px);
     box-shadow: var(--shadow-md);
     color: var(--white) !important;
+}
+
+/* Botões no hero section */
+#home .read-more {
+    margin: 0.5rem !important;
 }
 
 /* Seção de Posts */
