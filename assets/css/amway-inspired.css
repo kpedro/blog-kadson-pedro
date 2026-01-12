@@ -406,6 +406,42 @@ a.read-more:hover {
 }
 
 /* Conteúdo de Artigos - Otimizado para Leitura */
+/* Seção de comentários - garantir que apareça abaixo do artigo */
+.comments-section {
+    margin-top: var(--spacing-lg) !important;
+    padding-top: var(--spacing-md) !important;
+    border-top: 2px solid var(--border-color) !important;
+    clear: both;
+}
+
+.comments-section h3 {
+    color: var(--primary-color) !important;
+    font-size: 1.5rem !important;
+    font-weight: 600 !important;
+    margin-bottom: var(--spacing-md) !important;
+    text-align: left !important;
+}
+
+.comment-form {
+    max-width: 100% !important;
+    margin: 0 !important;
+}
+
+/* Botões de compartilhamento - garantir espaçamento */
+.share-buttons {
+    margin-top: var(--spacing-lg) !important;
+    padding-top: var(--spacing-md) !important;
+    border-top: 1px solid var(--border-color) !important;
+    clear: both;
+}
+
+.share-buttons h3 {
+    color: var(--primary-color) !important;
+    font-size: 1.3rem !important;
+    font-weight: 600 !important;
+    margin-bottom: var(--spacing-sm) !important;
+}
+
 article.post-content,
 #post-content,
 .post-content {
