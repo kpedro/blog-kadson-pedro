@@ -60,22 +60,84 @@ document.addEventListener("DOMContentLoaded", function () {
                 const imageMatch = markdown.match(/!\[.*?\]\((.*?)\)/);
 
                 // Atualiza meta tags para compartilhamento
+                let imageUrl = '';
                 if (imageMatch) {
-                    const imagePath = imageMatch[1].replace('../', '/');
-                    document.getElementById('og-image').content = window.location.origin + imagePath;
+                    let imagePath = imageMatch[1];
+                    // Remove '../' se existir
+                    imagePath = imagePath.replace(/^\.\.\//, '/');
+                    // Garante que comece com /
+                    if (!imagePath.startsWith('/')) {
+                        imagePath = '/' + imagePath;
+                    }
+                    imageUrl = window.location.origin + imagePath;
+                } else {
+                    // Imagem padrão se não houver imagem no post
+                    imageUrl = window.location.origin + '/assets/images/logo-blog.png';
                 }
+                
+                // Atualiza todas as meta tags de imagem
+                const ogImage = document.getElementById('og-image');
+                const twitterImage = document.getElementById('twitter-image');
+                
+                if (ogImage) ogImage.content = imageUrl;
+                if (twitterImage) twitterImage.content = imageUrl;
 
                 if (titleMatch && postTitle) {
-                    postTitle.textContent = titleMatch[1];
-                    document.title = `${titleMatch[1]} - Kadson Pedro`;
-                    document.getElementById('og-title').content = titleMatch[1];
+                    const fullTitle = titleMatch[1];
+                    postTitle.textContent = fullTitle;
+                    document.title = `${fullTitle} - Kadson Pedro`;
+                    
+                    // Atualiza todas as meta tags de título
+                    const ogTitle = document.getElementById('og-title');
+                    const twitterTitle = document.getElementById('twitter-title');
+                    
+                    if (ogTitle) ogTitle.content = fullTitle;
+                    if (twitterTitle) twitterTitle.content = fullTitle;
+                }
+                
+                // Atualiza URL para compartilhamento
+                const ogUrl = document.getElementById('og-url');
+                if (ogUrl) {
+                    ogUrl.content = window.location.href;
                 }
 
-                // Atualiza descrição para compartilhamento
-                const firstParagraph = markdown.split('\n\n')[2]; // Pega o primeiro parágrafo após metadados
-                if (firstParagraph) {
-                    document.getElementById('og-description').content = firstParagraph.replace(/[#*]/g, '');
+                // Atualiza descrição para compartilhamento - extrai melhor do conteúdo
+                let description = '';
+                // Tenta pegar o primeiro parágrafo de texto real (não metadados, não imagens)
+                const lines = markdown.split('\n');
+                for (let i = 0; i < lines.length; i++) {
+                    const line = lines[i].trim();
+                    // Ignora metadados, imagens, títulos e linhas vazias
+                    if (line && 
+                        !line.startsWith('#') && 
+                        !line.startsWith('📅') && 
+                        !line.startsWith('✍️') && 
+                        !line.startsWith('🏷️') && 
+                        !line.startsWith('![') && 
+                        !line.startsWith('_') &&
+                        line.length > 20) {
+                        description = line.replace(/[#*\[\]()]/g, '').trim();
+                        // Limita a 160 caracteres (ideal para Open Graph)
+                        if (description.length > 160) {
+                            description = description.substring(0, 157) + '...';
+                        }
+                        break;
+                    }
                 }
+                
+                // Se não encontrou, usa um texto padrão
+                if (!description) {
+                    description = 'Descubra estratégias práticas e eficazes para melhorar sua qualidade de vida e aumentar seus níveis de energia diariamente.';
+                }
+                
+                // Atualiza todas as meta tags de descrição
+                const ogDesc = document.getElementById('og-description');
+                const twitterDesc = document.getElementById('twitter-description');
+                const metaDesc = document.querySelector('meta[name="description"]');
+                
+                if (ogDesc) ogDesc.content = description;
+                if (twitterDesc) twitterDesc.content = description;
+                if (metaDesc) metaDesc.content = description;
 
                 if (postMeta && dateMatch && authorMatch && categoryMatch) {
                     postMeta.innerHTML = `
