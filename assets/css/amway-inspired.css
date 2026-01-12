@@ -776,10 +776,10 @@ footer {
 }
 
 .about-section h1 {
-    color: var(--primary-color);
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: var(--spacing-md);
+    color: var(--primary-color) !important;
+    font-size: 2.5rem !important;
+    font-weight: 700 !important;
+    margin-bottom: var(--spacing-md) !important;
     letter-spacing: -0.5px;
 }
 
