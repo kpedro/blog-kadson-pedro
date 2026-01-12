@@ -196,16 +196,16 @@ header nav ul li a[style*="light-color"] {
 
 #home p {
     font-size: 1.25rem !important;
-    color: var(--text-light) !important;
+    color: var(--text-color) !important; /* Mudado de text-light para text-color - mais escuro, melhor contraste */
     margin-bottom: var(--spacing-xs) !important;
-    font-weight: 400 !important;
+    font-weight: 500 !important; /* Aumentado de 400 para 500 - mais legível */
 }
 
 #home .subtitle {
     font-size: 1.1rem !important;
-    color: var(--text-lighter) !important;
+    color: var(--text-light) !important; /* Mudado de text-lighter para text-light - mais escuro, melhor contraste */
     margin-bottom: var(--spacing-lg) !important;
-    font-weight: 300 !important;
+    font-weight: 400 !important; /* Mudado de 300 para 400 - mais legível */
 }
 
 /* Botões Modernos - Override completo */
@@ -528,10 +528,11 @@ article.post-content img {
 .newsletter-content p {
     font-size: 1.1rem;
     margin-bottom: var(--spacing-md);
-    opacity: 0.95;
+    color: rgba(255, 255, 255, 0.95) !important; /* Branco com 95% de opacidade - contraste excelente sobre azul */
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
+    font-weight: 400;
 }
 
 .newsletter-form {
